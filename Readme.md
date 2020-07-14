@@ -1,7 +1,7 @@
 # Личный проект «Кэт энерджи» [![Build status][travis-image]][travis-url] [![Dependency status][dependency-image]][dependency-url]
 
 * Студент: [Светлана Дудникова](https://up.htmlacademy.ru/adaptive/20/user/1363181).
-* Наставник: `Неизвестно`.
+* Наставник: [Сергей Остаповец](https://up.htmlacademy.ru/htmlcss/28/user/288419).
 
 ---
 
