@@ -1,0 +1,10 @@
+// @import "variables";
+
+.page-footer {
+  background-color: $basic-grey;
+
+  &__link {
+    text-decoration: none;
+    color: $black;
+  }
+}

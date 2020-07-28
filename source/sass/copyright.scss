@@ -1,0 +1,9 @@
+// @import "variables";
+
+.copyright {
+  &__link {
+    text-decoration: none;
+    color: $special-dark-grey;
+    font-size: 16px;
+  }
+}

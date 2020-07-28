@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html class="page" lang="ru">
+<html lang="ru">
   <head>
     <meta charset="utf-8">
     <title>HTML Academy: Кэт энерджи</title>
+    <link rel="stylesheet" href="css/style.css">
   </head>
 
-  <body class="page__body">
+  <body>
     <header class="page-header">
       <div class="page-header__logo">
         <a class="page-header__logo-img" href="index.html">
@@ -15,23 +16,21 @@
           <img src="https://via.placeholder.com/150x150" width="150" height="150" alt="Логотип Cat Energy">
         </a>
       </div>
-      <nav class="main-nav">
-        <button class="main-nav__toggle" type="button">
-          <span class="visually-hidden">Открыть меню</span>
-        </button>
+      <nav class="main-nav__nav">
+        <button class="main-nav__toggle" type="button">Открыть меню</button>
         <div class="main-nav__wrapper">
-          <ul class="main-nav__list site-list">
-            <li class="site-list__item">
+          <ul class="main-nav__list">
+            <li class="main-nav__item">
               <a href="index.html">
                 Главная
               </a>
             </li>
-            <li class="site-list__item">
+            <li class="main-nav__item">
               <a href="catalog.html">
                 Каталог продукции
               </a>
             </li>
-            <li class="site-list__item site-list__item--active">
+            <li class="main-nav__item main-nav__item--active">
               <a>
                 Подбор программы
               </a>
@@ -103,7 +102,7 @@
               <label for="vitamins">Витамины</label>
             </li>
           </ul>
-          <a href="#" class="form__button button">Отправить заявку</a>
+          <a href="#" class="form__button">Отправить заявку</a>
           <p class="form__legend">
             <small>
               * — Обязательные поля
@@ -123,7 +122,7 @@
       <a class="page-footer__logo" href="index.html">
         <img src="https://via.placeholder.com/150x150" width="150" height="150" alt="Логотип Cat Energy">
       </a>
-      <div class="page-footer__social social">
+      <div class="page-footer__social">
         <ul class="social__list">
           <li class="social__item">
             <a class="social__link social__link--vkontakte" href="https://vk.com/htmlacademy">Вконтакте</a>
@@ -136,7 +135,7 @@
           </li>
         </ul>
       </div>
-      <div class="page-footer__copyright copyright">
+      <div class="page-footer__copyright">
         <a class="copyright__link" href="https://htmlacademy.ru/intensive/adaptive">HTML Academy</a>
         <a class="copyright__logo" href="https://htmlacademy.ru/intensive/adaptive">HTML Academy</a>
       </div>

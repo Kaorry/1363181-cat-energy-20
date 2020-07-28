@@ -1,0 +1,24 @@
+// @import "variables";
+
+.promo {
+  color: $white;
+  font-family: $oswald;
+  font-weight: 400;
+
+
+  &__wrapper {
+    background-color: $basic-green;
+    background-image: url('../img/index-background-mobile@1x.jpg');
+    background-repeat: no-repeat;
+  }
+
+  &__title {
+    font-size: 36px;
+    line-height: 36px;
+  }
+
+  &__text {
+    line-height: 14px;
+    text-transform: uppercase;
+  }
+}

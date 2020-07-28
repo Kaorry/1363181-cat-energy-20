@@ -1,0 +1,22 @@
+// @import "variables";
+
+.programs {
+  &__list {
+    margin: 0;
+    padding: 0;
+  }
+
+  &__item {
+    background-color: $basic-grey;
+    list-style: none;
+  }
+
+  &__title {
+    font-family: $oswald;
+    color: $black;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 37px;
+    text-transform: uppercase;
+  }
+}
