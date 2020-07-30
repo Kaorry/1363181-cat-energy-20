@@ -1,24 +1,41 @@
-// @import "variables";
 
 .promo {
   color: $white;
   font-family: $oswald;
   font-weight: 400;
 
-
   &__wrapper {
-    background-color: $basic-green;
-    background-image: url('../img/index-background-mobile@1x.jpg');
-    background-repeat: no-repeat;
+    @include wrapper;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 95vw;
+      z-index: -1;
+      background-color: $basic-green;
+      background-image: url("../img/index-background-mobile@1x.jpg");
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
   }
 
   &__title {
-    font-size: 36px;
+    @include main-title;
     line-height: 36px;
+    color: $white;
+    text-align: center;
   }
 
   &__text {
     line-height: 14px;
     text-transform: uppercase;
+    text-align: center;
+  }
+
+  &__button {
+    @include button;
   }
 }

@@ -1,0 +1,81 @@
+@mixin phone {
+  @media (max-width: 320px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: 321px) and (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: 769px) {
+    @content;
+  }
+}
+
+@mixin not-phone {
+  @media (min-width: 321px) {
+    @content;
+  }
+}
+
+@mixin main-title {
+  font-family: $oswald;
+  color: $black;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 40px;
+  margin: 0;
+  padding: 0;
+  padding-top: 27px;
+  padding-bottom: 25px;
+
+  @include not-phone {
+    font-size: 60px;
+    line-height: 60px;
+  }
+}
+
+@mixin wrapper {
+  position: relative;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+@mixin button($type: default) {
+  @if $type == default {
+    color: $white;
+    background-color: $basic-green;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  @if $type == catalog {
+    color: $special-dark-grey;
+    background-color: $basic-grey;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  @if $type == link {
+    color: $black;
+    line-height: 57px;
+    display: flex;
+    align-items: center;
+  }
+
+  font-family: $oswald;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  height: 40px;
+  text-transform: uppercase;
+  text-decoration: none;
+}

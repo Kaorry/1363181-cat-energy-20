@@ -1,10 +1,19 @@
-// @import "variables";
-
 .page-footer {
   background-color: $basic-grey;
 
+  &__wrapper {
+    @include wrapper;
+  }
+
   &__link {
     text-decoration: none;
-    color: $black;
+    color: $special-dark-grey;
+    font-size: 16px;
+  }
+
+  &__copyright {
+    line-height: 78px;
+    display: flex;
+    justify-content: space-between;
   }
 }
