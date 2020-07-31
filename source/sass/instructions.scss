@@ -1,0 +1,23 @@
+.instructions {
+  &__wrapper {
+    @include wrapper;
+  }
+
+  &__title {
+    @include main-title;
+  }
+
+  &__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    margin-top: 13px;
+    margin-bottom: 22px;
+  }
+
+  &__description {
+    margin: 0;
+    padding: 0;
+    padding-bottom: 20px;
+  }
+}

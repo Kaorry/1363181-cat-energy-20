@@ -1,0 +1,28 @@
+.main-nav {
+  &__list {
+    font-family: $oswald;
+    font-weight: 500;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__item {
+    list-style: none;
+    font-size: 20px;
+    line-height: 20px;
+    text-transform: uppercase;
+    text-align: center;
+    border-top: 1px solid $border-grey;
+  }
+
+  &__item:last-child {
+    border-bottom: 1px solid $border-grey;
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $black;
+    display: block;
+    line-height: 66px;
+  }
+}
