@@ -1,1 +1,28 @@
-//
+.page-header__wrapper {
+  @include not-phone {
+    @include wrapper;
+  }
+}
+
+.page-header__logo--mobile {
+  @include not-phone {
+    display: none;
+  }
+}
+
+.page-header__logo--tablet {
+  display: none;
+
+  @include tablet {
+    display: block;
+  }
+}
+
+
+.page-header__logo--desktop {
+  display: none;
+
+  @include desktop {
+    display: block;
+  }
+}

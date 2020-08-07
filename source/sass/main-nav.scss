@@ -1,28 +1,110 @@
 .main-nav {
-  &__list {
-    font-family: $oswald;
-    font-weight: 500;
-    margin: 0;
+  @include not-phone {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.main-nav__wrapper {
+  @include phone {
+    @include wrapper;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.main-nav__list {
+  position: relative;
+  font-family: $oswald;
+  font-weight: 500;
+  margin: 0;
+  padding: 0;
+
+  @include not-phone {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  &--index::before {
+    @include desktop {
+      content: "";
+      position: absolute;
+      width: 720px;
+      height: 696px;
+      background-image: url("../img/index-background-desktop@1x.jpg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      z-index: -1;
+      top: 0;
+      right: 0;
+    }
+  }
+}
+
+.main-nav__item {
+  list-style: none;
+  font-size: 20px;
+  line-height: 20px;
+  text-transform: uppercase;
+  text-align: center;
+  border-top: 1px solid $border-grey;
+
+  @include not-phone {
+    border: none;
+  }
+
+  @include tablet {
+    padding-right: 30px;
+  }
+
+  @include desktop {
+    padding-right: 30px;
+  }
+
+  &:last-of-type {
     padding: 0;
   }
+}
 
-  &__item {
-    list-style: none;
-    font-size: 20px;
-    line-height: 20px;
-    text-transform: uppercase;
-    text-align: center;
-    border-top: 1px solid $border-grey;
+.main-nav__item:last-child {
+  border-bottom: 1px solid $border-grey;
+
+  @include not-phone {
+    border: none;
+  }
+}
+
+.main-nav__link {
+  text-decoration: none;
+  color: $black;
+  display: block;
+  line-height: 66px;
+
+  @include not-phone {
+    font-weight: 400;
   }
 
-  &__item:last-child {
-    border-bottom: 1px solid $border-grey;
+  @include tablet {
+    font-size: 18px;
+    line-height: 24px;
   }
 
-  &__link {
-    text-decoration: none;
-    color: $black;
-    display: block;
-    line-height: 66px;
+  @include desktop {
+    line-height: 30px;
+  }
+
+  &--index {
+    @include desktop {
+      color: $white;
+    }
+  }
+}
+
+.main-nav__toggle {
+  @include not-phone {
+    display: none;
   }
 }

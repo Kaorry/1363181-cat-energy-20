@@ -1,106 +1,256 @@
 .form {
   font-family: $oswald;
   font-weight: 400;
+}
 
-  &__wrapper {
-    @include wrapper;
+.form__title {
+  @include main-title;
+  @include wrapper;
+}
+
+.form__subtitle {
+  @include main-title;
+  @include wrapper;
+  font-size: 24px;
+  line-height: 26px;
+  text-transform: none;
+
+  @include not-phone {
+    font-size: 36px;
+    line-height: 36px;
   }
 
-  &__title {
-    @include main-title;
+  @include tablet {
+    padding-left: 70px;
+  }
+}
+
+.form__text,
+.form__item,
+.form__input,
+.form__input input::placeholder,
+.form__textarea::placeholder {
+  font-family: $oswald;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.form__text {
+  color: $black;
+  padding: 0;
+  margin: 0;
+  padding-top: 12px;
+  padding-bottom: 39px;
+
+  @include wrapper;
+
+  @include not-phone {
+    font-size: 20px;
+    line-height: 30px;
+    width: 323px;
   }
 
-  &__subtitle {
-    @include main-title;
-    font-size: 24px;
-    line-height: 26px;
-    text-transform: none;
+  @include tablet {
+    padding-left: 70px;
+  }
+}
+
+.form__input,
+.form__input input::placeholder,
+.form__textarea::placeholder {
+  color: $special-dark-grey;
+}
+
+.form__input {
+  padding: 0;
+  margin: 0;
+  padding-bottom: 13px;
+  line-height: 45px;
+  display: flex;
+  flex-direction: row;
+  white-space: nowrap;
+
+  @include wrapper;
+
+  @include not-phone {
+    font-size: 20px;
+    line-height: 30px;
+    align-items: center;
   }
 
-  &__text,
-  &__item,
-  &__input,
-  &__input input::placeholder,
-  &__textarea::placeholder {
-    font-family: $oswald;
-    font-weight: 400;
-    text-transform: uppercase;
+  @include tablet {
+    padding-left: 70px;
   }
 
-  &__text {
-    color: $black;
-    padding: 0;
-    margin: 0;
-    padding-top: 12px;
-    padding-bottom: 39px;
+  @include desktop {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+
+.form__input input {
+  height: 45px;
+  min-width: 100px;
+  border: 1px solid $border-input;
+  box-sizing: border-box;
+  padding-left: 15px;
+  margin-left: 15px;
+  flex-grow: 1;
+
+  @include not-phone {
+    height: 52px;
+    line-height: 52px;
+    padding-top: 4px;
   }
 
-  &__input,
-  &__input input::placeholder,
-  &__textarea::placeholder {
-    color: $special-dark-grey;
+  @include tablet {
+    margin-right: 37px;
+  }
+}
+
+.form__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.form__list--radio {
+  @include wrapper;
+  padding-top: 20px;
+  border-top: 1px solid $border-dark-grey;
+  border-bottom: 1px solid $border-dark-grey;
+
+  @include not-phone {
+    margin-left: 70px;
+    margin-right: 67px;
+    border-left: 1px solid $border-dark-grey;
+    border-right: 1px solid $border-dark-grey;
   }
 
-  &__input {
-    padding: 0;
-    margin: 0;
-    padding-bottom: 13px;
-    line-height: 45px;
-    display: flex;
-    flex-direction: row;
-    white-space: nowrap;
-
-    & input {
-      height: 45px;
-      border: 1px solid $border-input;
-      box-sizing: border-box;
-      padding-left: 15px;
-      margin-left: 15px;
-      flex-grow: 1;
-    }
+  @include tablet {
+    margin-top: 72px;
+    margin-bottom: 71px;
   }
 
-  &__list {
-    list-style: none;
-    margin: 0;
-    padding: 0;
+  @include desktop {
+    padding-left: 28px;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
 
-    &--radio {
-      padding-top: 20px;
-      border-top: 1px solid $border-dark-grey;
-      border-bottom: 1px solid $border-dark-grey;
-    }
+.form__list--checkbox {
+  @include wrapper;
+
+  @include tablet {
+    padding-left: 70px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 60px;
   }
 
-  &__item {
-    &--radio {
-      color: $special-dark-grey-2;
-      margin-bottom: 20px;
-    }
+  @include desktop {
+    margin-top: 62px;
+    margin-bottom: 66px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    column-gap: 60px;
+  }
+}
 
-    &--checkbox {
-      color: $black;
-      margin-bottom: 14px;
-    }
+.form__item--radio {
+  color: $special-dark-grey-2;
+  margin-bottom: 20px;
+
+  @include not-phone {
+    font-size: 20px;
+    line-height: 30px;
+  }
+}
+
+.form__item--checkbox {
+  color: $black;
+  margin-bottom: 14px;
+
+  @include not-phone {
+    font-size: 20px;
+    line-height: 30px;
+  }
+}
+
+.form__textarea {
+  margin-left: 20px;
+  margin-right: 20px;
+  min-width: 260px;
+  min-height: 150px;
+  border: 1px solid $border-input;
+  box-sizing: border-box;
+  padding-left: 15px;
+
+  @include not-phone {
+    font-size: 20px;
+    line-height: 30px;
   }
 
-  &__textarea {
-    height: 150px;
-    width: 100%;
-    border: 1px solid $border-input;
-    box-sizing: border-box;
-    padding-left: 15px;
+  @include tablet {
+    margin-left: 70px;
+    margin-top: 51px;
+    margin-bottom: 38px;
+    margin-right: 70px;
+    min-height: 174px;
+    min-width: 617px;
   }
 
-  &__legend {
-    font-family: $arial;
-    font-size: 14px;
-    line-height: 16px;
-    text-transform: none;
-    text-align: center;
+  @include desktop {
+    margin-left: 110px;
+    margin-right: 110px;
+    min-width: 1205px;
+  }
+}
+
+.form__legend {
+  font-family: $arial;
+  font-size: 14px;
+  line-height: 16px;
+  text-transform: none;
+  text-align: center;
+
+  @include not-phone {
+    text-align: left;
+    font-size: 16px;
   }
 
-  &__button {
-    @include button;
+  @include desktop {
+    margin-bottom: 82px;
+  }
+}
+
+.form__button {
+  @include button;
+}
+
+.form__container {
+  @include wrapper;
+
+  @include not-phone {
+    padding-left: 70px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+  }
+
+  @include desktop {
+    padding-left: 110px;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.form__wrapper {
+  @include desktop {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    margin-right: 110px;
+    margin-left: 110px;
   }
 }

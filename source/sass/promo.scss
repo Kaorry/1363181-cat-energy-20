@@ -3,39 +3,87 @@
   color: $white;
   font-family: $oswald;
   font-weight: 400;
+}
 
-  &__wrapper {
-    @include wrapper;
+.promo__wrapper {
+  @include wrapper;
 
-    &::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 95vw;
-      z-index: -1;
-      background-color: $basic-green;
-      background-image: url("../img/index-background-mobile@1x.jpg");
-      background-size: cover;
-      background-repeat: no-repeat;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 320px;
+    height: 302px;
+    z-index: -1;
+    background-color: $basic-green;
+    background-image: url("../img/index-background-mobile@1x.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    @include not-phone {
+      display: none;
     }
   }
+}
 
-  &__title {
-    @include main-title;
-    line-height: 36px;
-    color: $white;
-    text-align: center;
-  }
+.promo__title {
+  @include main-title;
+  line-height: 36px;
+  color: $white;
+  text-align: center;
 
-  &__text {
-    line-height: 14px;
-    text-transform: uppercase;
-    text-align: center;
-  }
-
-  &__button {
-    @include button;
+  @include not-phone {
+    color: $black;
+    max-width: 415px;
+    text-align: left;
+    padding-left: 87px;
   }
 }
+
+.promo__text {
+  line-height: 14px;
+  text-transform: uppercase;
+  text-align: center;
+
+  @include not-phone {
+    color: $black;
+    text-align: left;
+    padding-left: 87px;
+  }
+}
+
+.promo__image {
+  @include not-phone {
+    z-index: -1;
+    position: absolute;
+    content: "";
+    height: 150px;
+    width: 150px;
+    text-align: left;
+    padding-left: 87px;
+  }
+
+  @include desktop {
+    top: 0;
+    right: 330px;
+  }
+}
+
+.promo__button {
+  @include button;
+
+  @include not-phone {
+    margin-top: 29px;
+    margin-bottom: 526px;
+    margin-left: 83px;
+    width: 254px;
+    height: 54px;
+    font-size: 20px;
+  }
+
+  @include desktop {
+    margin-bottom: 440px;
+  }
+}
+

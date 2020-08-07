@@ -1,5 +1,8 @@
+@import "../../node_modules/normalize-scss/sass/normalize";
+@include normalize();
 @import "variables";
-@import "mixins.scss";
+@import "fonts";
+@import "mixins";
 @import "main.scss";
 @import "page-header";
 @import "promo";
@@ -12,5 +15,4 @@
 @import "catalog";
 @import "additional-goods";
 @import "main-nav";
-@import "social";
 @import "copyright";
