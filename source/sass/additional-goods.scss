@@ -1,80 +1,153 @@
-.additional-goods {
-  &__wrapper {
-    @include wrapper;
+.additional-goods__wrapper {
+  @include wrapper;
+
+  @include desktop {
+    display: flex;
+    flex-direction: row;
+  }
+}
+
+.additional-goods__title {
+  @include wrapper;
+  font-family: $oswald;
+  color: $black;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 24px;
+  margin: 0;
+  padding: 0;
+  padding-top: 28px;
+  padding-bottom: 35px;
+
+  @include not-phone {
+    font-size: 36px;
+    line-height: 36px;
+  }
+}
+
+.additional-goods__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  flex-basis: 100%;
+}
+
+.additional-goods__item {
+  position: relative;
+  border-top: 1px solid $special-grey;
+  padding-bottom: 18px;
+
+  &:last-of-type {
+    border-bottom: 1px solid $special-grey;
   }
 
-  &__title {
-    font-family: $oswald;
-    color: $black;
-    font-weight: 400;
-    font-size: 24px;
-    line-height: 24px;
-    margin: 0;
-    padding: 0;
-    padding-top: 28px;
-    padding-bottom: 35px;
+  @include tablet {
+    padding: 28px 38px;
+    border-left: 1px solid $special-grey;
+    border-right: 1px solid $special-grey;
+    box-sizing: border-box;
   }
 
-  &__list {
-    list-style: none;
-    margin: 0;
-    padding: 0;
+  @include desktop {
+    padding: 16px 0;
+    display: flex;
+    flex-direction: row;
+  }
+}
+
+.additional-goods__item-title {
+  text-transform: uppercase;
+  font-family: $oswald;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 16px;
+  color: $special-dark-grey-2;
+  margin: 0;
+  padding: 0;
+  padding-top: 13px;
+  padding-bottom: 13px;
+
+  @include not-phone {
+    font-size: 20px;
+    line-height: 20px;
+    padding-top: 0;
+    padding-bottom: 23px;
   }
 
-  &__item {
-    border-top: 1px solid $special-grey;
-    padding-bottom: 18px;
+  @include desktop {
+    width: 244px;
+    padding-bottom: 0;
+    align-self: center;
+  }
+}
 
-    &:last-of-type {
-      border-bottom: 1px solid $special-grey;
-    }
+.additional-goods__item-table {
+  line-height: 14px;
+  padding-bottom: 15px;
 
-    &-title {
-      text-transform: uppercase;
-      font-family: $oswald;
-      font-weight: 400;
-      font-size: 16px;
-      line-height: 16px;
-      color: $special-dark-grey-2;
-      margin: 0;
-      padding: 0;
-      padding-top: 13px;
-      padding-bottom: 13px;
-    }
-
-    &-table {
-      line-height: 14px;
-      padding-bottom: 15px;
-    }
+  & td:nth-child(2) {
+    padding-left: 50px;
   }
 
-  &__text {
-    position: relative;
-    color: $white;
+  @include not-phone {
     font-size: 16px;
     line-height: 20px;
-    padding-top: 186px;
-    padding-bottom: 78px;
-    padding-left: 58px;
-    padding-right: 61px;
-    text-align: center;
-
-    &::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 280px;
-      height: 289px;
-      z-index: -1;
-      background-color: $basic-green;
-      background-image: url("../img/gift-photo-mobile@1x.jpg");
-      background-size: cover;
-      background-repeat: no-repeat;
-    }
   }
 
-  &__button {
-    @include button;
+  @include tablet {
+    position: absolute;
+    top: 28px;
+    right: 38px;
+  }
+
+  @include desktop {
+    flex-grow: 1;
+    padding-bottom: 0;
+    align-self: center;
+
+    & td:nth-child(2) {
+      text-align: right;
+    }
+  }
+}
+
+.additional-goods__text {
+  position: relative;
+  color: $white;
+  font-size: 16px;
+  line-height: 20px;
+  padding-top: 186px;
+  padding-bottom: 78px;
+  padding-left: 58px;
+  padding-right: 61px;
+  text-align: center;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 280px;
+    height: 289px;
+    z-index: -1;
+    background-color: $basic-green;
+    background-image: url("../img/gift-photo-mobile@1x.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  @include desktop {
+    padding: 0;
+    margin: 0;
+    margin-left: 80px;
+  }
+}
+
+.additional-goods__button {
+  @include button;
+
+  @include desktop {
+    width: 244px;
+    margin-left: 39px;
   }
 }

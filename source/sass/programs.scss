@@ -1,39 +1,82 @@
-.programs {
-  &__wrapper {
-    @include wrapper;
+.programs__wrapper {
+  @include wrapper;
+}
+
+.programs__list {
+  margin: 0;
+  padding: 0;
+
+  @include not-phone {
+    display: grid;
+    gap: 20px;
   }
 
-  &__list {
+  @include desktop {
+    grid-template-columns: 50% 50%;
+    gap: 80px;
+  }
+}
+
+.programs__item {
+  background-color: $basic-grey;
+  list-style: none;
+  margin-top: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+
+  @include not-phone {
+    min-height: 372px;
     margin: 0;
     padding: 0;
   }
+}
 
-  &__item {
-    @include wrapper;
-    background-color: $basic-grey;
-    list-style: none;
-    margin-top: 20px;
+.programs__title {
+  @include main-title;
+  font-size: 24px;
+  line-height: 37px;
+  padding-top: 30px;
+  padding-bottom: 29px;
+  text-transform: uppercase;
+
+  @include not-phone {
+    font-size: 36px;
+    line-height: 36px;
+    padding-top: 77px;
+    padding-left: 52px;
   }
+}
 
-  &__title {
-    @include main-title;
-    font-size: 24px;
-    line-height: 37px;
-    padding-top: 30px;
-    padding-bottom: 29px;
-    text-transform: uppercase;
-  }
+.programs__description {
+  margin: 0;
+  padding: 0;
 
-  &__description {
-    margin: 0;
-    padding: 0;
+  &:last-of-type {
+    border-bottom: 1px solid $border-dark-grey;
 
-    &:last-of-type {
-      border-bottom: 1px solid $border-dark-grey;
+    @include not-phone {
+      border: none;
     }
   }
 
-  &__button {
-    @include button(link);
+  @include not-phone {
+    font-size: 16px;
+    line-height: 24px;
+    padding-left: 52px;
+    padding-right: 52px;
+  }
+}
+
+.programs__button {
+  @include button(link);
+
+  @include not-phone {
+    padding-left: 52px;
+    font-size: 20px;
+    line-height: 30px;
+  }
+
+  @include tablet {
+    margin-top: 52px;
   }
 }

@@ -1,76 +1,180 @@
 .example {
   background-color: $background-grey;
 
-  &__wrapper {
-    @include wrapper;
+  @include tablet {
+    background: linear-gradient(to bottom, $white 40%, $background-grey 40%);
   }
 
-  &__title {
-    @include main-title;
+  @include desktop {
+    background: linear-gradient(to bottom, $white 30%, $background-grey 30%);
   }
+}
 
-  &__text {
-    margin: 0;
-    padding: 0;
-    padding-top: 8px;
+.example__wrapper {
+  @include wrapper;
+}
+
+.example__title {
+  @include main-title;
+}
+
+.example__text {
+  margin: 0;
+  padding: 0;
+  padding-top: 8px;
+
+  @include desktop {
+    width: 463px;
+    margin-top: 146px;
   }
+}
 
-  &__list {
-    margin-top: 25px;
+.example__stats {
+  @include tablet {
     display: flex;
     justify-content: space-between;
   }
+}
 
-  &__item {
-    position: relative;
-    width: 124px;
-    height: 56px;
-    display: flex;
+.example__list {
+  margin-top: 25px;
+  display: flex;
+  justify-content: space-between;
+
+  @include not-phone {
+    width: 362px;
+  }
+
+  @include tablet {
+    margin-bottom: 109px;
+  }
+
+  @include desktop {
+    margin-bottom: 55px;
+    margin-top: 69px;
+  }
+}
+
+.example__item {
+  position: relative;
+  width: 124px;
+  height: 56px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  border: 1px solid $special-grey;
+  box-sizing: border-box;
+  border-radius: 3px;
+
+  @include not-phone {
+    width: 162px;
+    height: 77px;
+  }
+}
+
+.example__number {
+  font-family: $oswald;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 24px;
+  padding-top: 14px;
+  padding-bottom: 18px;
+  text-transform: uppercase;
+
+  @include not-phone {
+    font-size: 30px;
+    line-height: 37px;
+    padding-top: 15px;
+    padding-bottom: 20px;
+  }
+}
+
+.example__description {
+  position: absolute;
+  left: 18px;
+  top: 42px;
+  width: 79px;
+  margin: 0;
+  padding: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 12px;
+  line-height: 12px;
+  background-color: $background-grey;
+
+  @include tablet {
+    background-color: $white;
+  }
+
+  @include not-phone {
+    font-size: 14px;
+    line-height: 14px;
+    width: 127px;
+    height: 27px;
+    top: 68px;
+    left: 14px;
+  }
+}
+
+.example__cost {
+  display: flex;
+  flex-direction: row;
+
+  @include tablet {
     flex-direction: column;
-    text-align: center;
-    border: 1px solid $special-grey;
-    box-sizing: border-box;
-    border-radius: 3px;
-  }
-
-  &__number {
-    font-family: $oswald;
-    font-weight: 400;
-    font-size: 24px;
-    line-height: 24px;
-    padding-top: 14px;
-    padding-bottom: 18px;
-    text-transform: uppercase;
-  }
-
-  &__description {
-    position: absolute;
-    left: 18px;
-    top: 42px;
-    width: 79px;
-    margin: 0;
+    top: 0;
     padding: 0;
-    padding-left: 4px;
-    padding-right: 4px;
-    text-align: center;
-    font-size: 12px;
-    line-height: 12px;
-    background-color: $background-grey;
+    margin: 0;
+    margin-top: 36px;
+  }
+}
+
+.example__cost-text {
+  font-family: $oswald;
+  font-weight: 400;
+  line-height: 20px;
+  text-transform: uppercase;
+
+  &:first-child {
+    margin-right: 5px;
+
+    @include tablet {
+      margin-bottom: 9px;
+    }
+
+    @include desktop {
+      padding-right: 63px;
+      padding-bottom: 75px;
+    }
   }
 
-  &__cost {
-    font-family: $oswald;
-    font-weight: 400;
-    line-height: 20px;
-    text-transform: uppercase;
+  @include not-phone {
+    font-size: 20px;
   }
 
-  &__toggle {
-    border: none;
-    font-family: $oswald;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 20px;
-    text-transform: uppercase;
+  @include tablet {
+    padding: 0;
+    margin: 0;
+    text-align: right;
   }
+}
+
+.example__sliders {
+  @include desktop {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+}
+
+.example__toggle {
+  border: none;
+  font-family: $oswald;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  text-transform: uppercase;
 }
