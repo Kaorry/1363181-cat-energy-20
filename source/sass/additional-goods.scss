@@ -4,24 +4,47 @@
   @include desktop {
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
   }
 }
 
 .additional-goods__title {
   @include wrapper;
+  position: relative;
+  display: inline-block;
   font-family: $oswald;
   color: $black;
+  background-color: $white;
+  width: auto;
   font-weight: 400;
   font-size: 24px;
   line-height: 24px;
   margin: 0;
-  padding: 0;
   padding-top: 28px;
-  padding-bottom: 35px;
+  padding-bottom: 33px;
+  padding-left: 20px;
+  padding-right: 22px;
+
+  &::after {
+    @include green-line;
+  }
 
   @include not-phone {
     font-size: 36px;
     line-height: 36px;
+    margin-left: 31px;
+    padding-top: 66px;
+    padding-right: 37px;
+    padding-left: 36px;
+    padding-bottom: 84px;
+  }
+
+  @include desktop {
+    margin-top: 0;
+    padding-top: 78px;
+    padding-bottom: 76px;
+    margin-bottom: 3px;
+    margin-left: 73px;
   }
 }
 
@@ -30,19 +53,25 @@
   margin: 0;
   padding: 0;
   flex-basis: 100%;
+
+  @include desktop {
+    margin-bottom: 83px;
+  }
 }
 
 .additional-goods__item {
   position: relative;
   border-top: 1px solid $special-grey;
-  padding-bottom: 18px;
+  padding-bottom: 16px;
+  border-collapse: collapse;
 
   &:last-of-type {
     border-bottom: 1px solid $special-grey;
+    border-collapse: collapse;
   }
 
   @include tablet {
-    padding: 28px 38px;
+    padding: 27px 38px 28px 38px;
     border-left: 1px solid $special-grey;
     border-right: 1px solid $special-grey;
     box-sizing: border-box;
@@ -75,7 +104,7 @@
   }
 
   @include desktop {
-    width: 244px;
+    width: 324px;
     padding-bottom: 0;
     align-self: center;
   }
@@ -83,11 +112,9 @@
 
 .additional-goods__item-table {
   line-height: 14px;
-  padding-bottom: 15px;
-
-  & td:nth-child(2) {
-    padding-left: 50px;
-  }
+  margin-bottom: 14px;
+  border-collapse: collapse;
+  white-space: nowrap;
 
   @include not-phone {
     font-size: 16px;
@@ -98,11 +125,14 @@
     position: absolute;
     top: 28px;
     right: 38px;
+    width: 29vw;
   }
 
   @include desktop {
     flex-grow: 1;
     padding-bottom: 0;
+    margin-bottom: 0;
+    margin-top: 3px;
     align-self: center;
 
     & td:nth-child(2) {
@@ -111,35 +141,102 @@
   }
 }
 
+.additional-goods__item-table td:nth-child(2) {
+  width: 100%;
+  text-align: right;
+
+  @include tablet {
+    width: 12vw;
+  }
+}
+
+.additional-goods__item-table td:nth-child(1) {
+  @include tablet {
+    text-align: right;
+  }
+}
+
 .additional-goods__text {
   position: relative;
   color: $white;
   font-size: 16px;
   line-height: 20px;
-  padding-top: 186px;
-  padding-bottom: 78px;
+  padding-top: 211px;
+  padding-bottom: 60px;
   padding-left: 58px;
   padding-right: 61px;
   text-align: center;
 
+  @include tablet {
+    text-align: left;
+    margin-top: 44px;
+    margin-bottom: 100px;
+    padding-top: 97px;
+    padding-left: 425px;
+    padding-right: 102px;
+  }
+
+  @include desktop {
+    padding: 0;
+    margin: 0;
+    margin-left: 79px;
+    width: 221px;
+    padding-top: 188px;
+    padding-bottom: 0;
+    padding-left: 42px;
+    padding-right: 42px;
+  }
+
   &::before {
     content: "";
     position: absolute;
-    top: 0;
+    top: 23px;
     left: 0;
-    width: 280px;
+    width: 100%;
     height: 289px;
     z-index: -1;
     background-color: $basic-green;
     background-image: url("../img/gift-photo-mobile@1x.jpg");
     background-size: cover;
     background-repeat: no-repeat;
+
+    @include tablet {
+      height: 200px;
+      background-image: url("../img/gift-photo-tablet@1x.jpg");
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+
+    @include desktop {
+      top: 0;
+      height: 289px;
+      background-image: url("../img/gift-photo-desktop@1x.jpg");
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
   }
 
-  @include desktop {
-    padding: 0;
-    margin: 0;
-    margin-left: 80px;
+  &::after {
+    content: "";
+    position: absolute;
+    top: 86px;
+    left: 40%;
+    width: 57px;
+    height: 65px;
+    z-index: 0;
+    mask-image: url("../img/icon-gift.svg");
+    mask-repeat: no-repeat;
+    background-color: $white;
+
+    @include tablet {
+      left: 13%;
+      top: 87px;
+    }
+
+    @include desktop {
+      top: 64px;
+      left: 39%;
+    }
   }
 }
 
