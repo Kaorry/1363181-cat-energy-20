@@ -2,7 +2,7 @@
   background-color: $background-grey;
 
   @include tablet {
-    background: linear-gradient(to bottom, $white 40%, $background-grey 40%);
+    background: linear-gradient(to bottom, $white 57%, $background-grey 57%);
   }
 
   @include desktop {
@@ -16,16 +16,34 @@
 
 .example__title {
   @include main-title;
+
+  @include tablet {
+    margin-top: 16px;
+  }
+
+  @include desktop {
+    padding-top: 41px;
+  }
 }
 
 .example__text {
   margin: 0;
   padding: 0;
   padding-top: 8px;
+  padding-right: 10px;
+
+  @include not-phone {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  @include tablet {
+    margin-top: 31px;
+  }
 
   @include desktop {
     width: 463px;
-    margin-top: 146px;
+    margin-top: 114px;
   }
 }
 
@@ -33,6 +51,7 @@
   @include tablet {
     display: flex;
     justify-content: space-between;
+    margin-top: 28px;
   }
 }
 
@@ -42,16 +61,16 @@
   justify-content: space-between;
 
   @include not-phone {
-    width: 362px;
+    width: 366px;
   }
 
   @include tablet {
-    margin-bottom: 109px;
+    margin-bottom: 50px;
   }
 
   @include desktop {
     margin-bottom: 55px;
-    margin-top: 69px;
+    margin-top: 67px;
   }
 }
 
@@ -68,7 +87,7 @@
 
   @include not-phone {
     width: 162px;
-    height: 77px;
+    height: 72px;
   }
 }
 
@@ -77,7 +96,7 @@
   font-weight: 400;
   font-size: 24px;
   line-height: 24px;
-  padding-top: 14px;
+  padding-top: 13px;
   padding-bottom: 18px;
   text-transform: uppercase;
 
@@ -96,8 +115,9 @@
   width: 79px;
   margin: 0;
   padding: 0;
-  padding-left: 4px;
+  padding-left: 3px;
   padding-right: 4px;
+  padding-top: 5px;
   display: inline-block;
   text-align: center;
   vertical-align: middle;
@@ -114,7 +134,7 @@
     line-height: 14px;
     width: 127px;
     height: 27px;
-    top: 68px;
+    top: 58px;
     left: 14px;
   }
 }
@@ -122,13 +142,22 @@
 .example__cost {
   display: flex;
   flex-direction: row;
+  padding-top: 21px;
+  justify-content: center;
 
   @include tablet {
     flex-direction: column;
+    justify-content: start;
     top: 0;
     padding: 0;
     margin: 0;
     margin-top: 36px;
+  }
+
+  @include desktop {
+    justify-content: start;
+    padding: 0;
+    padding-top: 2px;
   }
 }
 
@@ -147,7 +176,7 @@
 
     @include desktop {
       padding-right: 63px;
-      padding-bottom: 75px;
+      padding-bottom: 78px;
     }
   }
 
@@ -163,11 +192,35 @@
 }
 
 .example__sliders {
+  @include tablet {
+    padding-bottom: 29px;
+  }
+
   @include desktop {
     position: absolute;
-    top: 0;
-    right: 0;
+    top: 1574px;
+    right: 71px;
   }
+}
+
+.example__slide {
+  display: none;
+
+  &--current {
+    display: block;
+  }
+}
+
+.example__image {
+  padding-top: 33px;
+}
+
+.example__toggles {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding-top: 32px;
+  padding-bottom: 34px;
 }
 
 .example__toggle {

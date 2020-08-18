@@ -1,28 +1,30 @@
 .page-header__wrapper {
-  @include not-phone {
+  @include desktop {
     @include wrapper;
   }
 }
 
-.page-header__logo--mobile {
-  @include not-phone {
-    display: none;
+.page-header__logo {
+  &--mobile {
+    margin-top: 11px;
+    margin-bottom: 14px;
   }
-}
 
-.page-header__logo--tablet {
-  display: none;
-
-  @include tablet {
-    display: block;
+  &--tablet {
+    margin-top: 24px;
+    margin-left: 20px;
   }
-}
 
+  &--desktop {
+    margin-top: 53px;
+  }
 
-.page-header__logo--desktop {
-  display: none;
+  &:hover,
+  &:focus {
+    opacity: 0.8;
+  }
 
-  @include desktop {
-    display: block;
+  &:active {
+    opacity: 0.6;
   }
 }

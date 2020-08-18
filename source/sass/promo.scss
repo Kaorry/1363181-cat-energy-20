@@ -13,8 +13,8 @@
     position: absolute;
     top: 0;
     left: 0;
-    width: 320px;
-    height: 302px;
+    width: 100%;
+    min-height: 305px;
     z-index: -1;
     background-color: $basic-green;
     background-image: url("../img/index-background-mobile@1x.jpg");
@@ -39,17 +39,38 @@
     text-align: left;
     padding-left: 87px;
   }
+
+  @include tablet {
+    margin-top: 38px;
+  }
+
+  @include desktop {
+    margin-top: 84px;
+    padding-left: 81px;
+  }
 }
 
 .promo__text {
   line-height: 14px;
   text-transform: uppercase;
   text-align: center;
+  margin: 0;
 
   @include not-phone {
     color: $black;
     text-align: left;
     padding-left: 87px;
+    font-size: 20px;
+    line-height: 20px;
+  }
+
+  @include tablet {
+    margin-top: 15px;
+  }
+
+  @include desktop {
+    padding-left: 81px;
+    padding-top: 15px;
   }
 }
 
@@ -64,25 +85,43 @@
     padding-left: 87px;
   }
 
+  @include tablet {
+    min-height: 609px;
+    min-width: 709px;
+    padding-left: 0;
+    padding-top: 20px;
+  }
+
   @include desktop {
-    top: 0;
-    right: 330px;
+    min-height: 500px;
+    min-width: 550px;
+    top: -55px;
+    right: 0;
+    left: 473px;
+  }
+
+  &--mobile {
+    margin: auto;
+    margin-top: 29px;
   }
 }
 
 .promo__button {
   @include button;
+  margin-top: 3px;
 
   @include not-phone {
-    margin-top: 29px;
+    margin-top: 49px;
     margin-bottom: 526px;
-    margin-left: 83px;
-    width: 254px;
+    margin-left: 82px;
+    width: 244px;
     height: 54px;
     font-size: 20px;
   }
 
   @include desktop {
-    margin-bottom: 440px;
+    margin-top: 52px;
+    margin-bottom: 267px;
+    margin-left: 81px;
   }
 }

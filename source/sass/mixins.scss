@@ -63,6 +63,16 @@
     display: flex;
     align-items: center;
     justify-content: center;
+
+    &:hover,
+    &:focus {
+      background-color: $basic-green-2;
+    }
+
+    &:active {
+      background-color: $basic-green-2;
+      color: $white-opacity;
+    }
   }
 
   @if $type == catalog {
@@ -83,9 +93,30 @@
 
   font-family: $oswald;
   font-weight: 400;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 18px;
   height: 40px;
   text-transform: uppercase;
   text-decoration: none;
+}
+
+@mixin green-line {
+  position: absolute;
+  content: "";
+  width: 140vw;
+  height: 2px;
+  top: 50%;
+  left: 0;
+  background-color: $basic-green;
+  z-index: -2;
+  overflow: hidden;
+
+  @include tablet {
+    left: -31px;
+  }
+
+  @include desktop {
+    top: 63%;
+    left: -110px;
+  }
 }

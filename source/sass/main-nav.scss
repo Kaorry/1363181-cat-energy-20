@@ -28,6 +28,15 @@
     justify-content: space-between;
   }
 
+  @include tablet {
+    margin-top: 42px;
+    margin-right: 30px;
+  }
+
+  @include desktop {
+    margin-top: 69px;
+  }
+
   &--index::before {
     @include desktop {
       content: "";
@@ -38,8 +47,8 @@
       background-size: cover;
       background-repeat: no-repeat;
       z-index: -1;
-      top: 0;
-      right: 0;
+      top: -69px;
+      right: -110px;
     }
   }
 }
@@ -54,14 +63,7 @@
 
   @include not-phone {
     border: none;
-  }
-
-  @include tablet {
-    padding-right: 30px;
-  }
-
-  @include desktop {
-    padding-right: 30px;
+    padding-right: 35px;
   }
 
   &:last-of-type {
@@ -81,7 +83,16 @@
   text-decoration: none;
   color: $black;
   display: block;
-  line-height: 66px;
+  line-height: 65px;
+
+  &:hover,
+  &:focus {
+    opacity: 0.6;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
 
   @include not-phone {
     font-weight: 400;
@@ -96,14 +107,70 @@
     line-height: 30px;
   }
 
+  &--active {
+    &:hover,
+    &:focus {
+      opacity: 1;
+    }
+
+    &:active {
+      opacity: 1;
+    }
+
+    @include not-phone {
+      border-bottom: 2px solid $basic-green;
+    }
+  }
+
   &--index {
+    &:hover,
+    &:focus {
+      opacity: 1;
+    }
+
+    &:active {
+      opacity: 1;
+    }
+
     @include desktop {
       color: $white;
+    }
+  }
+
+  &--index-active {
+    &:hover,
+    &:focus {
+      opacity: 1;
+    }
+
+    &:active {
+      opacity: 1;
+    }
+
+    @include tablet {
+      border-bottom: 2px solid $basic-green;
+    }
+
+    @include desktop {
+      color: $white;
+      border-bottom: 2px solid $white;
     }
   }
 }
 
 .main-nav__toggle {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 2;
+  display: block;
+  width: 21px;
+  height: 24px;
+  border: none;
+  background-color: transparent;
+  background-image: url("../img/icon-close.svg");
+  background-repeat: no-repeat;
+
   @include not-phone {
     display: none;
   }

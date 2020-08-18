@@ -9,6 +9,14 @@
 
 .instructions__title {
   @include main-title;
+
+  @include tablet {
+    padding-top: 45px;
+  }
+
+  @include desktop {
+    padding-top: 72px;
+  }
 }
 
 .instructions__list {
@@ -25,7 +33,9 @@
   @include tablet {
     grid-template-columns: 249px 249px;
     grid-template-rows: 280px 280px;
-    column-gap: 150px;
+    column-gap: 135px;
+    row-gap: 37px;
+    margin-bottom: 40px;
   }
 
   @include desktop {
@@ -35,13 +45,138 @@
   }
 }
 
+.instructions__item {
+  position: relative;
+  padding-bottom: 20px;
+
+  &::before {
+    position: absolute;
+    content: "";
+    width: 60px;
+    height: 60px;
+    top: 0;
+    left: 0;
+    background-color: $basic-green;
+
+    @include not-phone {
+      width: 80px;
+      height: 80px;
+      top: 34px;
+    }
+  }
+
+  &--leaf::after {
+    position: absolute;
+    content: "";
+    width: 30px;
+    height: 32px;
+    top: 14px;
+    left: 15px;
+    background-image: url("../img/advantage-leaf@1x.png");
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+
+    @include not-phone {
+      top: 58px;
+      left: 25px;
+    }
+  }
+
+  &--powder::after {
+    position: absolute;
+    content: "";
+    width: 30px;
+    height: 32px;
+    top: 14px;
+    left: 15px;
+    background-image: url("../img/advantage-powder@1x.png");
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+
+    @include not-phone {
+      top: 58px;
+      left: 25px;
+    }
+  }
+
+  &--dining::after {
+    position: absolute;
+    content: "";
+    width: 30px;
+    height: 32px;
+    top: 14px;
+    left: 15px;
+    background-image: url("../img/advantage-dining@1x.png");
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+
+    @include not-phone {
+      top: 58px;
+      left: 25px;
+    }
+  }
+
+  &--clock::after {
+    position: absolute;
+    content: "";
+    width: 30px;
+    height: 32px;
+    top: 14px;
+    left: 15px;
+    background-image: url("../img/advantage-clock@1x.png");
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+
+    @include not-phone {
+      top: 58px;
+      left: 25px;
+    }
+  }
+}
+
 .instructions__description {
+  position: relative;
   margin: 0;
   padding: 0;
-  padding-bottom: 20px;
+  padding-top: 2px;
+  padding-bottom: 4px;
+  padding-left: 80px;
 
   @include not-phone {
     font-size: 16px;
     line-height: 24px;
+    padding: 0;
+    padding-top: 146px;
+    padding-right: 10px;
+
+    &::after {
+      position: absolute;
+      color: $basic-grey;
+      font-family: $oswald;
+      font-size: 280px;
+      line-height: 280px;
+      top: -6px;
+      left: 118px;
+      z-index: -3;
+    }
+
+    &--first::after {
+      content: "1";
+    }
+
+    &--second::after {
+      content: "2";
+      left: 112px;
+    }
+
+    &--third::after {
+      content: "3";
+      left: 115px;
+    }
+
+    &--fourth::after {
+      content: "4";
+      left: 114px;
+    }
   }
 }

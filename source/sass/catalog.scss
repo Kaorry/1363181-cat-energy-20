@@ -2,9 +2,17 @@
   @include main-title;
   @include wrapper;
 
-  @include not-phone {
-    margin-top: 65px;
-    margin-bottom: 83px;
+  padding-top: 25px;
+  padding-bottom: 38px;
+
+  @include tablet {
+    margin-top: 40px;
+    margin-bottom: 46px;
+  }
+
+  @include desktop {
+    margin-top: 50px;
+    margin-bottom: 48px;
   }
 }
 
@@ -16,7 +24,7 @@
 
   @include tablet {
     grid-template-columns: 1fr 1fr;
-    gap: 59px;
+    gap: 61px;
     padding-left: 30px;
     padding-right: 30px;
   }
@@ -32,21 +40,22 @@
 
 .catalog__item {
   border-top: 1px solid $special-grey-2;
-  padding-bottom: 25px;
-  padding-top: 8px;
+  padding-bottom: 24px;
   padding-right: 20px;
   padding-left: 20px;
 
   display: grid;
   grid-template-areas: "img title" "img table" "button button";
   grid-template-columns: 1fr 1fr;
+  grid-template-rows: min-content 1fr min-content;
 
   @include not-phone {
     border: none;
     background: linear-gradient(to bottom, transparent 81px, $basic-grey 81px);
     grid-template-areas: "img" "title" "table" "button";
     grid-template-columns: 1fr;
-    padding: 39px 40px;
+    grid-template-rows: 208px min-content min-content min-content;
+    padding: 0 37px 40px 39px;
   }
 
   &--special {
@@ -54,32 +63,34 @@
     padding-bottom: 25px;
     grid-template-areas: "title" "text" "button";
     grid-template-columns: 1fr;
+    grid-template-rows: 95px min-content min-content;
 
     @include not-phone {
       background: none;
       margin-top: 81px;
       border: 2px solid $basic-grey;
       box-sizing: border-box;
+      padding-bottom: 38px;
       grid-template-areas: "title" "text" "button";
       grid-template-columns: 1fr;
+      grid-template-rows: 1fr min-content min-content;
     }
   }
 }
 
 .catalog__item-title {
+  position: relative;
   text-transform: uppercase;
   font-family: $oswald;
   font-weight: 400;
+  margin: 0;
+  padding-top: 21px;
+  padding-bottom: 13px;
   font-size: 16px;
   line-height: 20px;
   color: $special-dark-grey-2;
   max-width: 76px;
   grid-area: title;
-
-  &--special {
-    max-width: 100%;
-    text-align: center;
-  }
 
   @include not-phone {
     justify-self: center;
@@ -87,21 +98,56 @@
     font-size: 20px;
     line-height: 24px;
     max-width: 158px;
+    padding-top: 32px;
+  }
+
+  &--special {
+    max-width: 100%;
+    text-align: center;
+    padding-top: 80px;
+
+    @include not-phone {
+      max-width: 158px;
+      padding-top: 156px;
+      padding-bottom: 0;
+    }
+
+    &::before {
+      position: absolute;
+      content: "";
+      top: 26px;
+      left: 45%;
+      width: 30px;
+      height: 30px;
+      mask-image: url("../img/icon-plus-mobile.svg");
+      mask-repeat: no-repeat;
+      background-color: $special-grey-4;
+
+      @include not-phone {
+        top: 50px;
+        left: 31%;
+        width: 60px;
+        height: 60px;
+        mask-image: url("../img/icon-plus.svg");
+        mask-repeat: no-repeat;
+        background-color: $special-grey-4;
+      }
+    }
   }
 }
 
 .catalog__item-image {
   grid-area: img;
 
-
   @include not-phone {
     justify-self: center;
+    align-self: flex-end;
   }
 }
 
 .catalog__item-table {
   font-size: 12px;
-  line-height: 16px;
+  line-height: 15px;
   grid-area: table;
   border-collapse: collapse;
 
@@ -112,6 +158,8 @@
 }
 
 .item-table__cell {
+  padding: 0;
+
   &:nth-child(2) {
     text-align: right;
   }
@@ -141,6 +189,12 @@
     max-width: 167px;
     justify-self: center;
   }
+
+  &--special {
+    @include not-phone {
+      padding-bottom: 64px;
+    }
+  }
 }
 
 .catalog__button {
@@ -150,4 +204,14 @@
 
 .catalog__button--special {
   @include button(catalog);
+
+  &:hover,
+  &:focus {
+    background-color: $special-grey-2;
+  }
+
+  &:active {
+    color: $dark-grey-opacity;
+    background-color: $special-grey-2;
+  }
 }

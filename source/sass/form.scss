@@ -6,14 +6,34 @@
 .form__title {
   @include main-title;
   @include wrapper;
+
+  @include not-phone {
+    margin-top: 38px;
+    margin-bottom: 22px;
+  }
+
+  @include desktop {
+    margin-top: 48px;
+  }
 }
 
 .form__subtitle {
   @include main-title;
   @include wrapper;
+
   font-size: 24px;
   line-height: 26px;
   text-transform: none;
+  padding-bottom: 0;
+  padding-top: 0;
+  margin-top: 27px;
+  margin-bottom: 34px;
+  background-color: $white;
+  display: inline-block;
+
+  &::after {
+    @include green-line;
+  }
 
   @include not-phone {
     font-size: 36px;
@@ -21,7 +41,15 @@
   }
 
   @include tablet {
-    padding-left: 70px;
+    padding-left: 38px;
+    margin-left: 30px;
+    padding-right: 44px;
+  }
+
+  @include desktop {
+    padding-left: 38px;
+    margin-left: 72px;
+    padding-right: 40px;
   }
 }
 
@@ -29,7 +57,7 @@
 .form__item,
 .form__input,
 .form__input input::placeholder,
-.form__textarea::placeholder {
+.form__textarea textarea::placeholder {
   font-family: $oswald;
   font-weight: 400;
   text-transform: uppercase;
@@ -39,8 +67,9 @@
   color: $black;
   padding: 0;
   margin: 0;
-  padding-top: 12px;
+  padding-top: 8px;
   padding-bottom: 39px;
+  margin-right: 30px;
 
   @include wrapper;
 
@@ -57,18 +86,66 @@
 
 .form__input,
 .form__input input::placeholder,
-.form__textarea::placeholder {
+.form__textarea textarea::placeholder {
   color: $special-dark-grey;
 }
 
 .form__input {
+  position: relative;
   padding: 0;
   margin: 0;
-  padding-bottom: 13px;
+  padding-bottom: 14px;
+  font-size: 16px;
   line-height: 45px;
   display: flex;
   flex-direction: row;
   white-space: nowrap;
+
+  &--email {
+    &::after {
+      position: absolute;
+      content: "";
+      width: 20px;
+      height: 14px;
+      top: 26%;
+      right: 34px;
+      mask-image: url("../img/icon-mail.svg");
+      mask-repeat: no-repeat;
+      background-color: $special-dark-grey-2;
+      z-index: 2;
+
+      @include tablet {
+        right: 83px;
+      }
+
+      @include desktop {
+        right: 17px;
+      }
+    }
+  }
+
+  &--telephone {
+    &::after {
+      position: absolute;
+      content: "";
+      width: 20px;
+      height: 20px;
+      top: 22%;
+      right: 34px;
+      mask-image: url("../img/icon-phone.svg");
+      mask-repeat: no-repeat;
+      background-color: $special-dark-grey-2;
+      z-index: 2;
+
+      @include tablet {
+        right: 83px;
+      }
+
+      @include desktop {
+        right: 17px;
+      }
+    }
+  }
 
   @include wrapper;
 
@@ -80,22 +157,30 @@
 
   @include tablet {
     padding-left: 70px;
+    padding-bottom: 21px;
   }
 
   @include desktop {
     padding-right: 0;
     padding-left: 0;
+    padding-bottom: 20px;
   }
 }
 
 .form__input input {
+  position: relative;
   height: 45px;
   min-width: 100px;
   border: 1px solid $border-input;
   box-sizing: border-box;
   padding-left: 15px;
-  margin-left: 15px;
+  padding-right: 40px;
+  margin-left: 13px;
   flex-grow: 1;
+
+  &:active {
+    border: 2px solid $special-dark-grey;
+  }
 
   @include not-phone {
     height: 52px;
@@ -105,6 +190,11 @@
 
   @include tablet {
     margin-right: 37px;
+    margin-left: 19px;
+  }
+
+  @include desktop {
+    margin-left: 19px;
   }
 }
 
@@ -112,11 +202,14 @@
   list-style: none;
   margin: 0;
   padding: 0;
+  font-size: 16px;
 }
 
 .form__list--radio {
   @include wrapper;
   padding-top: 20px;
+  padding-bottom: 7px;
+  margin-top: 9px;
   border-top: 1px solid $border-dark-grey;
   border-bottom: 1px solid $border-dark-grey;
 
@@ -128,14 +221,19 @@
   }
 
   @include tablet {
-    margin-top: 72px;
-    margin-bottom: 71px;
+    padding: 0;
+    margin-top: 50px;
+    margin-bottom: 49px;
+    padding-top: 24px;
+    padding-bottom: 11px;
   }
 
   @include desktop {
-    padding-left: 28px;
+    padding-left: 0;
     margin-left: 0;
     margin-right: 0;
+    margin-top: 0;
+    padding-top: 25px;
   }
 }
 
@@ -143,49 +241,107 @@
   @include wrapper;
 
   @include tablet {
+    margin-top: 23px;
     padding-left: 70px;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    column-gap: 60px;
+    column-gap: 20px;
   }
 
   @include desktop {
-    margin-top: 62px;
-    margin-bottom: 66px;
+    margin-top: 24px;
+    margin-bottom: 26px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    column-gap: 60px;
+    column-gap: 80px;
   }
+}
+
+.form__item > input {
+  position: absolute;
+  appearance: none;
+}
+
+.form__item > label {
+  position: relative;
 }
 
 .form__item--radio {
   color: $special-dark-grey-2;
-  margin-bottom: 20px;
+  margin-bottom: 13px;
+  line-height: 30px;
 
   @include not-phone {
     font-size: 20px;
-    line-height: 30px;
+    line-height: 40px;
+  }
+}
+
+.form__item--radio > label {
+  padding-left: 45px;
+
+  @include not-phone {
+    padding-left: 88px;
+  }
+}
+
+.form__item--radio > input {
+  padding-left: 45px;
+
+  &::before {
+    position: absolute;
+    content: "";
+    left: 0;
+    top: 0;
+    width: 30px;
+    height: 30px;
+    border: 1px solid $special-grey;
+    border-radius: 50%;
+    box-sizing: border-box;
+
+    @include not-phone {
+      width: 40px;
+      height: 40px;
+      left: 28px;
+    }
+  }
+
+  &:disabled {
+    &::before {
+      opacity: 0.3;
+    }
+  }
+
+  &:checked {
+    &::after {
+      position: absolute;
+      content: "";
+      top: 8px;
+      left: 8px;
+      width: 14px;
+      height: 14px;
+      background-color: $basic-green;
+      border-radius: 50%;
+      box-sizing: border-box;
+
+      @include not-phone {
+        width: 18px;
+        height: 18px;
+        top: 11px;
+        left: 39px;
+      }
+    }
+
+    &:disabled {
+      opacity: 0.3;
+    }
   }
 }
 
 .form__item--checkbox {
   color: $black;
   margin-bottom: 14px;
-
-  @include not-phone {
-    font-size: 20px;
-    line-height: 30px;
-  }
-}
-
-.form__textarea {
-  margin-left: 20px;
-  margin-right: 20px;
-  min-width: 260px;
-  min-height: 150px;
-  border: 1px solid $border-input;
-  box-sizing: border-box;
-  padding-left: 15px;
+  line-height: 28px;
 
   @include not-phone {
     font-size: 20px;
@@ -193,18 +349,120 @@
   }
 
   @include tablet {
-    margin-left: 70px;
-    margin-top: 51px;
-    margin-bottom: 38px;
-    margin-right: 70px;
+    line-height: 42px;
+    margin-bottom: 30px;
+  }
+
+  @include desktop {
+    line-height: 42px;
+  }
+}
+
+.form__item--checkbox > label {
+  padding-left: 45px;
+
+  @include tablet {
+    padding-left: 59px;
+  }
+
+  @include desktop {
+    padding-left: 59px;
+  }
+}
+
+.form__item--checkbox > input {
+  padding-left: 45px;
+
+  &::before {
+    position: absolute;
+    content: "";
+    left: 0;
+    top: 0;
+    width: 30px;
+    height: 30px;
+    border: 1px solid $special-grey;
+    box-sizing: border-box;
+
+    @include not-phone {
+      width: 40px;
+      height: 40px;
+    }
+  }
+
+  &:disabled {
+    &::before {
+      opacity: 0.3;
+    }
+  }
+
+  &:checked {
+    &::after {
+      position: absolute;
+      content: "";
+      top: 8px;
+      left: 7px;
+      width: 18px;
+      height: 14px;
+      mask-image: url("../img/icon-tick.svg");
+      mask-repeat: no-repeat;
+      background-color: $basic-green;
+
+      @include not-phone {
+        top: 13px;
+        left: 11px;
+      }
+    }
+
+    &:disabled {
+      opacity: 0.3;
+    }
+  }
+}
+
+.form__textarea {
+  @include wrapper;
+
+  @include tablet {
+    padding-left: 70px;
+    padding-right: 67px;
+  }
+
+  @include desktop {
+    margin-top: 42px;
+    margin-bottom: 41px;
+  }
+}
+
+.form__textarea > textarea {
+  width: 100%;
+  min-height: 150px;
+  border: 1px solid $border-input;
+  box-sizing: border-box;
+  padding-left: 15px;
+  padding-top: 11px;
+  margin-bottom: -3px;
+  color: $special-dark-grey;
+  font-size: 16px;
+
+  @include not-phone {
+    font-size: 20px;
+    line-height: 30px;
+  }
+
+  @include tablet {
+    margin-top: 40px;
+    margin-bottom: 35px;
+    padding-left: 17px;
+    padding-top: 10px;
     min-height: 174px;
     min-width: 617px;
   }
 
   @include desktop {
-    margin-left: 110px;
-    margin-right: 110px;
     min-width: 1205px;
+    min-height: 174px;
+    padding-left: 17px;
+    padding-top: 9px;
   }
 }
 
@@ -214,19 +472,37 @@
   line-height: 16px;
   text-transform: none;
   text-align: center;
+  margin-bottom: 32px;
 
   @include not-phone {
     text-align: left;
     font-size: 16px;
   }
 
+  @include tablet {
+    margin: 0;
+  }
+
   @include desktop {
-    margin-bottom: 82px;
+    margin-bottom: 0;
+    margin-top: 0;
   }
 }
 
 .form__button {
   @include button;
+  margin-top: 34px;
+  margin-bottom: 21px;
+
+  @include not-phone {
+    font-size: 20px;
+    height: 52px;
+    margin-top: 22px;
+  }
+
+  @include desktop {
+    margin-top: 19px;
+  }
 }
 
 .form__container {
@@ -235,13 +511,21 @@
   @include not-phone {
     padding-left: 70px;
     display: grid;
-    grid-template-columns: 1fr 1fr;
     gap: 60px;
+  }
+
+  @include tablet {
+    grid-template-columns: 282px 1fr;
+    align-items: center;
+    margin-bottom: 50px;
   }
 
   @include desktop {
     padding-left: 110px;
+    align-items: center;
     grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    margin-bottom: 62px;
   }
 }
 
@@ -252,5 +536,29 @@
     gap: 80px;
     margin-right: 110px;
     margin-left: 110px;
+    margin-bottom: 43px;
+  }
+
+  &--contacts {
+    margin-bottom: -15px;
+
+    @include tablet {
+      margin-top: 40px;
+      margin-bottom: 19px;
+    }
+
+    @include desktop {
+      margin-top: 42px;
+      margin-bottom: 20px;
+    }
+  }
+
+  &--main {
+    margin-top: 25px;
+
+    @include desktop {
+      margin-top: 26px;
+      grid-template-rows: 196px;
+    }
   }
 }
