@@ -1,3 +1,7 @@
+.additional-goods {
+  @include content-max-width;
+}
+
 .additional-goods__wrapper {
   @include wrapper;
 
@@ -29,7 +33,7 @@
     @include green-line;
   }
 
-  @include not-phone {
+  @include tablet-desktop {
     font-size: 36px;
     line-height: 36px;
     margin-left: 31px;
@@ -40,10 +44,10 @@
   }
 
   @include desktop {
-    margin-top: 0;
-    padding-top: 78px;
-    padding-bottom: 76px;
-    margin-bottom: 3px;
+    margin-top: 28px;
+    padding-top: 50px;
+    padding-bottom: 27px;
+    margin-bottom: 53px;
     margin-left: 73px;
   }
 }
@@ -96,7 +100,7 @@
   padding-top: 13px;
   padding-bottom: 13px;
 
-  @include not-phone {
+  @include tablet-desktop {
     font-size: 20px;
     line-height: 20px;
     padding-top: 0;
@@ -116,7 +120,7 @@
   border-collapse: collapse;
   white-space: nowrap;
 
-  @include not-phone {
+  @include tablet-desktop {
     font-size: 16px;
     line-height: 20px;
   }
@@ -154,6 +158,10 @@
   @include tablet {
     text-align: right;
   }
+
+  @include desktop {
+    padding-right: 20px;
+  }
 }
 
 .additional-goods__text {
@@ -170,9 +178,9 @@
   @include tablet {
     text-align: left;
     margin-top: 44px;
-    margin-bottom: 100px;
+    margin-bottom: 82px;
     padding-top: 97px;
-    padding-left: 425px;
+    padding-left: 60%;
     padding-right: 102px;
   }
 

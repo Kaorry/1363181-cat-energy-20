@@ -1,4 +1,6 @@
 .form {
+  @include content-max-width;
+
   font-family: $oswald;
   font-weight: 400;
 }
@@ -7,7 +9,7 @@
   @include main-title;
   @include wrapper;
 
-  @include not-phone {
+  @include tablet-desktop {
     margin-top: 38px;
     margin-bottom: 22px;
   }
@@ -35,7 +37,7 @@
     @include green-line;
   }
 
-  @include not-phone {
+  @include tablet-desktop {
     font-size: 36px;
     line-height: 36px;
   }
@@ -56,11 +58,26 @@
 .form__text,
 .form__item,
 .form__input,
+.form__input input,
 .form__input input::placeholder,
+.form__textarea textarea,
 .form__textarea textarea::placeholder {
   font-family: $oswald;
   font-weight: 400;
   text-transform: uppercase;
+}
+
+.form__input input,
+.form__input input::placeholder,
+.form__textarea textarea,
+.form__textarea textarea::placeholder {
+  font-size: 16px;
+  line-height: 18px;
+
+  @include tablet-desktop {
+    font-size: 20px;
+    line-height: 30px;
+  }
 }
 
 .form__text {
@@ -73,7 +90,7 @@
 
   @include wrapper;
 
-  @include not-phone {
+  @include tablet-desktop {
     font-size: 20px;
     line-height: 30px;
     width: 323px;
@@ -101,55 +118,9 @@
   flex-direction: row;
   white-space: nowrap;
 
-  &--email {
-    &::after {
-      position: absolute;
-      content: "";
-      width: 20px;
-      height: 14px;
-      top: 26%;
-      right: 34px;
-      mask-image: url("../img/icon-mail.svg");
-      mask-repeat: no-repeat;
-      background-color: $special-dark-grey-2;
-      z-index: 2;
-
-      @include tablet {
-        right: 83px;
-      }
-
-      @include desktop {
-        right: 17px;
-      }
-    }
-  }
-
-  &--telephone {
-    &::after {
-      position: absolute;
-      content: "";
-      width: 20px;
-      height: 20px;
-      top: 22%;
-      right: 34px;
-      mask-image: url("../img/icon-phone.svg");
-      mask-repeat: no-repeat;
-      background-color: $special-dark-grey-2;
-      z-index: 2;
-
-      @include tablet {
-        right: 83px;
-      }
-
-      @include desktop {
-        right: 17px;
-      }
-    }
-  }
-
   @include wrapper;
 
-  @include not-phone {
+  @include tablet-desktop {
     font-size: 20px;
     line-height: 30px;
     align-items: center;
@@ -171,21 +142,17 @@
   position: relative;
   height: 45px;
   min-width: 100px;
-  border: 1px solid $border-input;
-  box-sizing: border-box;
-  padding-left: 15px;
+  padding-left: 16px;
   padding-right: 40px;
   margin-left: 13px;
   flex-grow: 1;
 
-  &:active {
-    border: 2px solid $special-dark-grey;
-  }
+  @include input-border;
 
-  @include not-phone {
+  @include tablet-desktop {
     height: 52px;
     line-height: 52px;
-    padding-top: 4px;
+    padding-top: 3px;
   }
 
   @include tablet {
@@ -194,8 +161,43 @@
   }
 
   @include desktop {
-    margin-left: 19px;
+    margin-left: 20px;
   }
+}
+
+.form__icon {
+  position: absolute;
+  content: "";
+  width: 20px;
+  right: 34px;
+  z-index: 2;
+
+  @include tablet {
+    right: 83px;
+  }
+
+  @include desktop {
+    right: 17px;
+  }
+
+  &--email {
+    height: 14px;
+    top: 26%;
+  }
+
+  &--telephone {
+    height: 20px;
+    top: 22%;
+  }
+}
+
+input:focus + .form__icon,
+input:active + .form__icon {
+  fill: $basic-green;
+}
+
+input:invalid:not(:placeholder-shown) + .form__icon {
+  fill: $status-error;
 }
 
 .form__list {
@@ -213,7 +215,7 @@
   border-top: 1px solid $border-dark-grey;
   border-bottom: 1px solid $border-dark-grey;
 
-  @include not-phone {
+  @include tablet-desktop {
     margin-left: 70px;
     margin-right: 67px;
     border-left: 1px solid $border-dark-grey;
@@ -260,10 +262,12 @@
 .form__item > input {
   position: absolute;
   appearance: none;
+  cursor: pointer;
 }
 
 .form__item > label {
   position: relative;
+  cursor: pointer;
 }
 
 .form__item--radio {
@@ -271,7 +275,7 @@
   margin-bottom: 13px;
   line-height: 30px;
 
-  @include not-phone {
+  @include tablet-desktop {
     font-size: 20px;
     line-height: 40px;
   }
@@ -280,7 +284,7 @@
 .form__item--radio > label {
   padding-left: 45px;
 
-  @include not-phone {
+  @include tablet-desktop {
     padding-left: 88px;
   }
 }
@@ -299,10 +303,17 @@
     border-radius: 50%;
     box-sizing: border-box;
 
-    @include not-phone {
+    @include tablet-desktop {
       width: 40px;
       height: 40px;
-      left: 28px;
+      left: 22px;
+    }
+  }
+
+  &:focus,
+  &:hover {
+    &::before {
+      border-color: $border-grey-2;
     }
   }
 
@@ -324,11 +335,11 @@
       border-radius: 50%;
       box-sizing: border-box;
 
-      @include not-phone {
+      @include tablet-desktop {
         width: 18px;
         height: 18px;
         top: 11px;
-        left: 39px;
+        left: 33px;
       }
     }
 
@@ -343,7 +354,7 @@
   margin-bottom: 14px;
   line-height: 28px;
 
-  @include not-phone {
+  @include tablet-desktop {
     font-size: 20px;
     line-height: 30px;
   }
@@ -383,9 +394,16 @@
     border: 1px solid $special-grey;
     box-sizing: border-box;
 
-    @include not-phone {
+    @include tablet-desktop {
       width: 40px;
       height: 40px;
+    }
+  }
+
+  &:focus,
+  &:hover {
+    &::before {
+      border-color: $border-grey-2;
     }
   }
 
@@ -407,7 +425,7 @@
       mask-repeat: no-repeat;
       background-color: $basic-green;
 
-      @include not-phone {
+      @include tablet-desktop {
         top: 13px;
         left: 11px;
       }
@@ -421,6 +439,8 @@
 
 .form__textarea {
   @include wrapper;
+
+  display: flex;
 
   @include tablet {
     padding-left: 70px;
@@ -436,15 +456,16 @@
 .form__textarea > textarea {
   width: 100%;
   min-height: 150px;
-  border: 1px solid $border-input;
-  box-sizing: border-box;
   padding-left: 15px;
   padding-top: 11px;
   margin-bottom: -3px;
   color: $special-dark-grey;
   font-size: 16px;
+  resize: vertical;
 
-  @include not-phone {
+  @include input-border;
+
+  @include tablet-desktop {
     font-size: 20px;
     line-height: 30px;
   }
@@ -455,11 +476,9 @@
     padding-left: 17px;
     padding-top: 10px;
     min-height: 174px;
-    min-width: 617px;
   }
 
   @include desktop {
-    min-width: 1205px;
     min-height: 174px;
     padding-left: 17px;
     padding-top: 9px;
@@ -474,7 +493,7 @@
   text-align: center;
   margin-bottom: 32px;
 
-  @include not-phone {
+  @include tablet-desktop {
     text-align: left;
     font-size: 16px;
   }
@@ -491,10 +510,13 @@
 
 .form__button {
   @include button;
+
+  border: none;
+  cursor: pointer;
   margin-top: 34px;
   margin-bottom: 21px;
 
-  @include not-phone {
+  @include tablet-desktop {
     font-size: 20px;
     height: 52px;
     margin-top: 22px;
@@ -508,7 +530,7 @@
 .form__container {
   @include wrapper;
 
-  @include not-phone {
+  @include tablet-desktop {
     padding-left: 70px;
     display: grid;
     gap: 60px;

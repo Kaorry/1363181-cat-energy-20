@@ -22,8 +22,11 @@
   }
 
   @include desktop {
-    position: absolute;
+    @include content-max-width;
+
+    position: relative;
     z-index: 1;
+    padding: 0;
     top: 95px;
     left: 40px;
     padding-left: 70px;
@@ -34,7 +37,7 @@
   display: flex;
   flex-direction: row;
 
-  @include not-phone {
+  @include tablet-desktop {
     margin-top: 38px;
     margin-bottom: 34px;
   }
@@ -65,7 +68,7 @@
   margin: 0;
   padding: 0;
 
-  @include not-phone {
+  @include tablet-desktop {
     width: 171px;
     font-size: 20px;
     line-height: 25px;
@@ -82,7 +85,7 @@
   font-style: normal;
   margin-left: 17px;
 
-  @include not-phone {
+  @include tablet-desktop {
     width: 155px;
     font-size: 16px;
     display: flex;
@@ -103,7 +106,7 @@
   height: 362px;
   display: block;
 
-  @include not-phone {
+  @include tablet-desktop {
     height: 400px;
   }
 }

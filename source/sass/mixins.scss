@@ -16,7 +16,7 @@
   }
 }
 
-@mixin not-phone {
+@mixin tablet-desktop {
   @media (min-width: 601px) {
     @content;
   }
@@ -33,7 +33,7 @@
   padding-top: 27px;
   padding-bottom: 25px;
 
-  @include not-phone {
+  @include tablet-desktop {
     font-size: 60px;
     line-height: 60px;
   }
@@ -55,6 +55,13 @@
   }
 }
 
+@mixin content-max-width {
+  max-width: 1440px;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+}
+
 @mixin button($type: default) {
   @if $type == default {
     color: $white;
@@ -67,6 +74,7 @@
     &:hover,
     &:focus {
       background-color: $basic-green-2;
+      transition: 250ms;
     }
 
     &:active {
@@ -93,30 +101,50 @@
 
   font-family: $oswald;
   font-weight: 400;
-  font-size: 16px;
   line-height: 18px;
   height: 40px;
   text-transform: uppercase;
   text-decoration: none;
+
+  @include tablet-desktop {
+    font-size: 16px;
+  }
 }
 
 @mixin green-line {
   position: absolute;
   content: "";
-  width: 140vw;
+  width: 60vw;
   height: 2px;
   top: 50%;
   left: 0;
   background-color: $basic-green;
   z-index: -2;
   overflow: hidden;
-
-  @include tablet {
-    left: -31px;
-  }
+  box-shadow: -60vw 0 0 $basic-green, 60vw 0 0 $basic-green;
 
   @include desktop {
     top: 63%;
-    left: -110px;
+  }
+}
+
+@mixin input-border {
+  border: none;
+  box-shadow: 0 0 0 1px $border-input;
+  box-sizing: border-box;
+  transition: box-shadow 250ms;
+
+  &:hover {
+    box-shadow: 0 0 0 1px $special-grey;
+  }
+
+  &:focus,
+  &:active {
+    outline: none;
+    box-shadow: 0 0 0 2px $special-dark-grey;
+  }
+
+  &:invalid:not(:placeholder-shown) {
+    box-shadow: 0 0 0 2px $status-error;
   }
 }
