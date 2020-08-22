@@ -7,6 +7,7 @@
 
 .promo__wrapper {
   @include wrapper;
+  @include content-max-width;
 
   &::before {
     content: "";
@@ -21,7 +22,7 @@
     background-size: cover;
     background-repeat: no-repeat;
 
-    @include not-phone {
+    @include tablet-desktop {
       display: none;
     }
   }
@@ -33,7 +34,7 @@
   color: $white;
   text-align: center;
 
-  @include not-phone {
+  @include tablet-desktop {
     color: $black;
     max-width: 415px;
     text-align: left;
@@ -56,7 +57,7 @@
   text-align: center;
   margin: 0;
 
-  @include not-phone {
+  @include tablet-desktop {
     color: $black;
     text-align: left;
     padding-left: 87px;
@@ -75,7 +76,7 @@
 }
 
 .promo__image {
-  @include not-phone {
+  @include tablet-desktop {
     z-index: -1;
     position: absolute;
     content: "";
@@ -90,6 +91,8 @@
     min-width: 709px;
     padding-left: 0;
     padding-top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
   }
 
   @include desktop {
@@ -110,7 +113,7 @@
   @include button;
   margin-top: 3px;
 
-  @include not-phone {
+  @include tablet-desktop {
     margin-top: 49px;
     margin-bottom: 526px;
     margin-left: 82px;

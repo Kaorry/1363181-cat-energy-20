@@ -1,6 +1,13 @@
+.page-header {
+  min-width: 320px;
+}
+
 .page-header__wrapper {
   @include desktop {
     @include wrapper;
+    @include content-max-width;
+
+    box-sizing: border-box;
   }
 }
 

@@ -12,12 +12,16 @@ body {
   display: none;
 }
 
+.page-main {
+  min-width: 320px;
+}
+
 [class$="--mobile"] {
   @include phone {
     display: block;
   }
 
-  @include not-phone {
+  @include tablet-desktop {
     display: none;
   }
 }

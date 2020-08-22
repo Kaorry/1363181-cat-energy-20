@@ -1,11 +1,14 @@
 .page-footer {
   background-color: $basic-grey;
+  min-width: 320px;
 }
 
 .page-footer__wrapper {
   @include wrapper;
+  @include content-max-width;
+  box-sizing: border-box;
 
-  @include not-phone {
+  @include tablet-desktop {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -28,7 +31,7 @@
     opacity: 0.6;
   }
 
-  @include not-phone {
+  @include tablet-desktop {
     padding: 0;
   }
 }
@@ -45,7 +48,7 @@
   border-bottom: 1px solid $border-dark-grey;
   box-sizing: border-box;
 
-  @include not-phone {
+  @include tablet-desktop {
     border: none;
   }
 
@@ -62,7 +65,7 @@
   padding-left: 16px;
   padding-right: 19px;
 
-  @include not-phone {
+  @include tablet-desktop {
     padding-left: 15px;
     padding-right: 9px;
   }
@@ -102,7 +105,7 @@
     padding-top: 21px;
   }
 
-  @include not-phone {
+  @include tablet-desktop {
     &--vkontakte {
       width: 30px;
       height: 22px;
@@ -152,7 +155,7 @@
     opacity: 0.3;
   }
 
-  @include not-phone {
+  @include tablet-desktop {
     padding-right: 17px;
     padding-top: 25px;
   }
@@ -167,7 +170,7 @@
   display: flex;
   justify-content: space-between;
 
-  @include not-phone {
+  @include tablet-desktop {
     line-height: 20px;
   }
 }

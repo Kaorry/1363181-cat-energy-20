@@ -6,11 +6,19 @@
   }
 
   @include desktop {
-    background: linear-gradient(to bottom, $white 30%, $background-grey 30%);
+    background: linear-gradient(to bottom, $white 27%, $background-grey 27%);
   }
 }
 
 .example__wrapper {
+  @include desktop {
+    @include content-max-width;
+
+    display: flex;
+  }
+}
+
+.example__content {
   @include wrapper;
 }
 
@@ -32,7 +40,7 @@
   padding-top: 8px;
   padding-right: 10px;
 
-  @include not-phone {
+  @include tablet-desktop {
     font-size: 16px;
     line-height: 24px;
   }
@@ -42,7 +50,7 @@
   }
 
   @include desktop {
-    width: 463px;
+    max-width: 432px;
     margin-top: 114px;
   }
 }
@@ -60,7 +68,7 @@
   display: flex;
   justify-content: space-between;
 
-  @include not-phone {
+  @include tablet-desktop {
     width: 366px;
   }
 
@@ -85,7 +93,7 @@
   box-sizing: border-box;
   border-radius: 3px;
 
-  @include not-phone {
+  @include tablet-desktop {
     width: 162px;
     height: 72px;
   }
@@ -100,7 +108,7 @@
   padding-bottom: 18px;
   text-transform: uppercase;
 
-  @include not-phone {
+  @include tablet-desktop {
     font-size: 30px;
     line-height: 37px;
     padding-top: 15px;
@@ -129,7 +137,7 @@
     background-color: $white;
   }
 
-  @include not-phone {
+  @include tablet-desktop {
     font-size: 14px;
     line-height: 14px;
     width: 127px;
@@ -175,12 +183,13 @@
     }
 
     @include desktop {
-      padding-right: 63px;
-      padding-bottom: 78px;
+      padding-right: 58px;
+      padding-bottom: 25px;
+      padding-top: 2px;
     }
   }
 
-  @include not-phone {
+  @include tablet-desktop {
     font-size: 20px;
   }
 
@@ -197,9 +206,9 @@
   }
 
   @include desktop {
-    position: absolute;
-    top: 1574px;
-    right: 71px;
+    position: relative;
+    top: -47px;
+    left: 19px;
   }
 }
 
@@ -208,6 +217,11 @@
 
   &--current {
     display: block;
+
+    @include tablet {
+      display: flex;
+      justify-content: center;
+    }
   }
 }
 
@@ -216,18 +230,126 @@
 }
 
 .example__toggles {
+  position: relative;
   display: flex;
   flex-direction: row;
   justify-content: center;
   padding-top: 32px;
   padding-bottom: 34px;
+
+  @include tablet {
+    padding-top: 17px;
+  }
+
+  @include desktop {
+    margin-left: 23px;
+    padding-top: 33px;
+    padding-bottom: 20px;
+  }
 }
 
 .example__toggle {
   border: none;
+  outline: none;
+  cursor: pointer;
   font-family: $oswald;
   font-weight: 400;
   font-size: 16px;
   line-height: 20px;
   text-transform: uppercase;
+  background-color: transparent;
+  padding-left: 17px;
+  padding-right: 13px;
+
+  @include tablet-desktop {
+    font-size: 20px;
+    line-height: 30px;
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: 17px;
+    margin-right: 13px;
+    border-bottom: 1px dotted $special-grey;
+    box-sizing: border-box;
+
+    &:hover,
+    &:focus {
+      border-bottom: 1px solid $special-grey;
+    }
+  }
+
+  @include desktop {
+    margin-left: 26px;
+  }
+}
+
+.example__state {
+  position: relative;
+  top: 4px;
+  margin-left: 5px;
+  width: 84px;
+  height: 14px;
+  background-color: $white;
+  border: 1px solid $special-grey;
+  box-sizing: border-box;
+  border-radius: 6px;
+
+  @include tablet-desktop {
+    width: 428px;
+    height: 6px;
+    background-color: $special-grey-5;
+    border: none;
+    top: 14px;
+  }
+
+  &--before,
+  &--after {
+    &::before {
+      position: absolute;
+      content: "";
+      width: 35px;
+      height: 6px;
+      background: $basic-green;
+      border-radius: 6px;
+      top: 3px;
+      cursor: pointer;
+
+      @include tablet-desktop {
+        width: 8px;
+        height: 8px;
+        top: -13px;
+        border: 12px solid $white;
+        border-radius: 50%;
+        box-shadow: 0 0 0 2px $special-grey, 0 2px 4px 2px $special-grey;
+
+        &:hover,
+        &:focus {
+          box-shadow: 0 0 0 2px $special-grey, 0 4px 4px 2px $special-grey;
+        }
+
+        &:active {
+          box-shadow: 0 0 0 2px $basic-green, 0 2px 4px 2px $special-grey;
+        }
+      }
+    }
+  }
+
+  &--before {
+    &::before {
+      left: 6px;
+
+      @include tablet-desktop {
+        left: 0;
+      }
+    }
+  }
+
+  &--after {
+    &::before {
+      right: 6px;
+
+      @include tablet-desktop {
+        right: 0;
+      }
+    }
+  }
 }

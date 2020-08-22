@@ -1,6 +1,7 @@
 
 .instructions__wrapper {
   @include wrapper;
+  @include content-max-width;
 
   @include tablet {
     border-bottom: 1px solid $border-grey;
@@ -26,12 +27,12 @@
   margin-top: 13px;
   margin-bottom: 22px;
 
-  @include not-phone {
+  @include tablet-desktop {
     display: grid;
   }
 
   @include tablet {
-    grid-template-columns: 249px 249px;
+    grid-template-columns: 1fr 1fr;
     grid-template-rows: 280px 280px;
     column-gap: 135px;
     row-gap: 37px;
@@ -39,9 +40,10 @@
   }
 
   @include desktop {
-    grid-template-columns: 249px 249px 249px 249px;
+    grid-template-columns: repeat(4, 1fr);
     grid-template-rows: 280px;
     justify-content: space-between;
+    column-gap: 79px;
   }
 }
 
@@ -58,7 +60,7 @@
     left: 0;
     background-color: $basic-green;
 
-    @include not-phone {
+    @include tablet-desktop {
       width: 80px;
       height: 80px;
       top: 34px;
@@ -76,7 +78,7 @@
     background-repeat: no-repeat;
     background-position: 50% 50%;
 
-    @include not-phone {
+    @include tablet-desktop {
       top: 58px;
       left: 25px;
     }
@@ -93,7 +95,7 @@
     background-repeat: no-repeat;
     background-position: 50% 50%;
 
-    @include not-phone {
+    @include tablet-desktop {
       top: 58px;
       left: 25px;
     }
@@ -110,7 +112,7 @@
     background-repeat: no-repeat;
     background-position: 50% 50%;
 
-    @include not-phone {
+    @include tablet-desktop {
       top: 58px;
       left: 25px;
     }
@@ -127,7 +129,7 @@
     background-repeat: no-repeat;
     background-position: 50% 50%;
 
-    @include not-phone {
+    @include tablet-desktop {
       top: 58px;
       left: 25px;
     }
@@ -142,7 +144,7 @@
   padding-bottom: 4px;
   padding-left: 80px;
 
-  @include not-phone {
+  @include tablet-desktop {
     font-size: 16px;
     line-height: 24px;
     padding: 0;

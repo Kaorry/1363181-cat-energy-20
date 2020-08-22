@@ -1,5 +1,5 @@
 .main-nav {
-  @include not-phone {
+  @include tablet-desktop {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -22,7 +22,7 @@
   margin: 0;
   padding: 0;
 
-  @include not-phone {
+  @include tablet-desktop {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -41,8 +41,9 @@
     @include desktop {
       content: "";
       position: absolute;
-      width: 720px;
+      min-width: 720px;
       height: 696px;
+      background-color: $basic-green;
       background-image: url("../img/index-background-desktop@1x.jpg");
       background-size: cover;
       background-repeat: no-repeat;
@@ -61,7 +62,7 @@
   text-align: center;
   border-top: 1px solid $border-grey;
 
-  @include not-phone {
+  @include tablet-desktop {
     border: none;
     padding-right: 35px;
   }
@@ -74,7 +75,7 @@
 .main-nav__item:last-child {
   border-bottom: 1px solid $border-grey;
 
-  @include not-phone {
+  @include tablet-desktop {
     border: none;
   }
 }
@@ -94,8 +95,9 @@
     opacity: 0.3;
   }
 
-  @include not-phone {
+  @include tablet-desktop {
     font-weight: 400;
+    padding-bottom: 8px;
   }
 
   @include tablet {
@@ -117,21 +119,12 @@
       opacity: 1;
     }
 
-    @include not-phone {
+    @include tablet-desktop {
       border-bottom: 2px solid $basic-green;
     }
   }
 
   &--index {
-    &:hover,
-    &:focus {
-      opacity: 1;
-    }
-
-    &:active {
-      opacity: 1;
-    }
-
     @include desktop {
       color: $white;
     }
@@ -171,7 +164,7 @@
   background-image: url("../img/icon-close.svg");
   background-repeat: no-repeat;
 
-  @include not-phone {
+  @include tablet-desktop {
     display: none;
   }
 }
