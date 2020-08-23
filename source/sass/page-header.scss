@@ -12,18 +12,22 @@
 }
 
 .page-header__logo {
-  &--mobile {
-    margin-top: 11px;
-    margin-bottom: 14px;
-  }
+  margin-top: 5px;
+  margin-bottom: 8px;
 
-  &--tablet {
-    margin-top: 24px;
+  @include tablet {
+    width: 174px;
+    height: 52px;
+    margin-top: 7px;
     margin-left: 20px;
+    margin-bottom: 0;
   }
 
-  &--desktop {
+  @include desktop {
+    width: 202px;
+    height: 59px;
     margin-top: 53px;
+    margin-bottom: 13px;
   }
 
   &:hover,

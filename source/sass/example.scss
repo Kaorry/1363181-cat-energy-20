@@ -227,6 +227,11 @@
 
 .example__image {
   padding-top: 33px;
+
+  @include tablet-desktop {
+    width: 690px;
+    height: 517px;
+  }
 }
 
 .example__toggles {

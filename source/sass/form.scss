@@ -191,12 +191,12 @@
   }
 }
 
-input:focus + .form__icon,
-input:active + .form__icon {
+.form__input-field:focus + .form__icon,
+.form__input-field:active + .form__icon {
   fill: $basic-green;
 }
 
-input:invalid:not(:placeholder-shown) + .form__icon {
+.form__input-field:invalid:not(:placeholder-shown) + .form__icon {
   fill: $status-error;
 }
 

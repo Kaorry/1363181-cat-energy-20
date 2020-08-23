@@ -22,6 +22,10 @@
     background-size: cover;
     background-repeat: no-repeat;
 
+    @include retina {
+      background-image: url("../img/index-background-mobile@2x.jpg");
+    }
+
     @include tablet-desktop {
       display: none;
     }
@@ -46,7 +50,7 @@
   }
 
   @include desktop {
-    margin-top: 84px;
+    margin-top: 71px;
     padding-left: 81px;
   }
 }
@@ -76,6 +80,11 @@
 }
 
 .promo__image {
+  margin: auto;
+  margin-top: 27px;
+  margin-left: -9px;
+  object-fit: cover;
+
   @include tablet-desktop {
     z-index: -1;
     position: absolute;
@@ -84,34 +93,32 @@
     width: 150px;
     text-align: left;
     padding-left: 87px;
+    padding-top: 20px;
   }
 
   @include tablet {
     min-height: 609px;
     min-width: 709px;
     padding-left: 0;
-    padding-top: 20px;
+    padding-top: 0;
+    margin-top: 22px;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(-49%);
   }
 
   @include desktop {
     min-height: 500px;
     min-width: 550px;
-    top: -55px;
+    top: -104px;
     right: 0;
-    left: 473px;
-  }
-
-  &--mobile {
-    margin: auto;
-    margin-top: 29px;
+    left: 481px;
   }
 }
 
 .promo__button {
   @include button;
   margin-top: 3px;
+  font-size: 14px;
 
   @include tablet-desktop {
     margin-top: 49px;

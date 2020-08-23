@@ -30,7 +30,7 @@
 
   @include tablet {
     grid-template-columns: 1fr 1fr;
-    gap: 61px;
+    gap: 57px;
     padding-left: 30px;
     padding-right: 30px;
   }
@@ -142,7 +142,7 @@
   }
 }
 
-.catalog__item-image {
+.catalog__item-image-wrapper {
   grid-area: img;
 
   @include tablet-desktop {
@@ -151,9 +151,23 @@
   }
 }
 
+.catalog__item-image {
+  @include tablet-desktop {
+    height: 174px;
+    width: auto;
+  }
+
+  &--big {
+    @include tablet-desktop {
+      height: 200px;
+      width: auto;
+    }
+  }
+}
+
 .catalog__item-table {
   font-size: 12px;
-  line-height: 15px;
+  line-height: 16px;
   grid-area: table;
   border-collapse: collapse;
 
@@ -165,6 +179,7 @@
 
 .item-table__cell {
   padding: 0;
+  line-height: 16px;
 
   &:nth-child(2) {
     text-align: right;
@@ -173,7 +188,8 @@
   @include tablet-desktop {
     border-bottom: 1px solid $special-grey;
     padding-bottom: 9px;
-    padding-top: 7px;
+    padding-top: 11px;
+    line-height: 12px;
   }
 }
 
