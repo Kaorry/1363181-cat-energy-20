@@ -105,8 +105,30 @@
 .contacts__map {
   height: 362px;
   display: block;
+  background-color: $basic-grey;
+  background-image: url("../img/bg-map-mobile@1x.png");
+
+  @include retina {
+    background-image: url("../img/bg-map-mobile@2x.png");
+  }
 
   @include tablet-desktop {
     height: 400px;
+  }
+
+  @include tablet {
+    background-image: url("../img/bg-map-tablet@1x.png");
+
+    @include retina {
+      background-image: url("../img/bg-map-tablet@2x.png");
+    }
+  }
+
+  @include desktop {
+    background-image: url("../img/bg-map-desktop@1x.png");
+
+    @include retina {
+      background-image: url("../img/bg-map-desktop@2x.png");
+    }
   }
 }

@@ -50,6 +50,10 @@
       z-index: -1;
       top: -69px;
       right: -110px;
+
+      @include retina {
+        background-image: url("../img/index-background-desktop@2x.jpg");
+      }
     }
   }
 }

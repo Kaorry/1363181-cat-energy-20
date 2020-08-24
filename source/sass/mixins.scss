@@ -22,6 +22,12 @@
   }
 }
 
+@mixin retina {
+  @media (min-resolution: 2dppx) {
+    @content;
+  }
+}
+
 @mixin main-title {
   font-family: $oswald;
   color: $black;
@@ -64,6 +70,7 @@
 
 @mixin button($type: default) {
   @if $type == default {
+    font-size: 16px;
     color: $white;
     background-color: $basic-green;
     width: 100%;
