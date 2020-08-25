@@ -15,8 +15,8 @@
   }
 
   @include desktop {
-    margin-top: 50px;
-    margin-bottom: 48px;
+    margin-top: 38px;
+    margin-bottom: 44px;
   }
 }
 
@@ -61,7 +61,7 @@
     grid-template-areas: "img" "title" "table" "button";
     grid-template-columns: 1fr;
     grid-template-rows: 208px min-content min-content min-content;
-    padding: 0 37px 40px 39px;
+    padding: 0 37px 40px 37px;
   }
 
   &--special {
@@ -144,6 +144,7 @@
 
 .catalog__item-image-wrapper {
   grid-area: img;
+  overflow: hidden;
 
   @include tablet-desktop {
     justify-self: center;
@@ -153,15 +154,8 @@
 
 .catalog__item-image {
   @include tablet-desktop {
-    height: 174px;
+    height: 100%;
     width: auto;
-  }
-
-  &--big {
-    @include tablet-desktop {
-      height: 200px;
-      width: auto;
-    }
   }
 }
 
@@ -214,7 +208,8 @@
 
   &--special {
     @include tablet-desktop {
-      padding-bottom: 64px;
+      padding-bottom: 65px;
+      margin-top: 0;
     }
   }
 }
