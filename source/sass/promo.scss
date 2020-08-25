@@ -46,7 +46,7 @@
   }
 
   @include tablet {
-    margin-top: 38px;
+    margin-top: 34px;
   }
 
   @include desktop {
@@ -82,7 +82,7 @@
 .promo__image {
   margin: auto;
   margin-top: 27px;
-  margin-left: -9px;
+  margin-left: 0;
   object-fit: cover;
 
   @include tablet-desktop {
@@ -102,6 +102,7 @@
     padding-left: 0;
     padding-top: 0;
     margin-top: 22px;
+    margin-left: -7px;
     left: 50%;
     transform: translateX(-49%);
   }
@@ -111,7 +112,7 @@
     min-width: 550px;
     top: -104px;
     right: 0;
-    left: 481px;
+    left: 473px;
   }
 }
 

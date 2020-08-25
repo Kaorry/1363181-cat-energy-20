@@ -40,11 +40,11 @@
     padding-top: 66px;
     padding-right: 37px;
     padding-left: 36px;
-    padding-bottom: 84px;
+    padding-bottom: 78px;
   }
 
   @include desktop {
-    margin-top: 28px;
+    margin-top: 25px;
     padding-top: 50px;
     padding-bottom: 27px;
     margin-bottom: 53px;
@@ -82,7 +82,9 @@
   }
 
   @include desktop {
-    padding: 16px 0;
+    padding: 0;
+    padding-top: 16px;
+    padding-bottom: 15px;
     display: flex;
     flex-direction: row;
   }

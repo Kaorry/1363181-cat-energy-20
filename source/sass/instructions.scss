@@ -164,4 +164,8 @@
       left: 114px;
     }
   }
+
+  @include desktop {
+    padding-right: 0;
+  }
 }
