@@ -4,13 +4,13 @@
     <meta charset="utf-8">
     <title>HTML Academy: Кэт энерджи</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/styles.min.css">
   </head>
 
   <body>
     <header class="page-header">
       <div class="page-header__wrapper">
-        <nav class="main-nav main-nav--opened">
+        <nav class="main-nav">
           <div class="main-nav__wrapper">
             <a class="page-header__logo">
               <picture>
@@ -19,9 +19,9 @@
                 <img class="page-header__logo" src="./img/logo-mobile.svg" width="202" height="59" alt="Логотип Cat Energy">
               </picture>
             </a>
-            <button class="main-nav__toggle" type="button" aria-label="Открыть меню"></button>
+            <button class="main-nav__toggle main-nav__toggle--close" type="button" aria-label="Открыть меню"></button>
           </div>
-          <ul class="main-nav__list main-nav__list--index">
+          <ul class="main-nav__list main-nav__list--index main-nav__list--hide">
             <li class="main-nav__item">
               <a class="main-nav__link main-nav__link--index-active">
                 Главная
@@ -151,7 +151,7 @@
               </picture>
             </div>
             <div class="example__toggles">
-              <button class="example__toggle example__toggle--current" type="button">Было</button>
+              <button class="example__toggle" type="button">Было</button>
               <div class="example__state example__state--before"></div>
               <button class="example__toggle" type="button">Стало</button>
             </div>
@@ -184,21 +184,21 @@
             <li class="social__item">
               <a class="social__link" href="https://vk.com/htmlacademy" aria-label="Вконтакте">
                 <svg class="social__icon social__icon--vkontakte">
-                  <use xlink:href="./img/sprite.svg#icon-vkontakte"></use>
+                  <use xlink:href="./img/sprite.svg#icon-vk"></use>
                 </svg>
               </a>
             </li>
             <li class="social__item">
               <a class="social__link" href="https://www.instagram.com/htmlacademy" aria-label="Инстаграм">
                 <svg class="social__icon social__icon--instagram">
-                  <use xlink:href="./img/sprite.svg#icon-instagram"></use>
+                  <use xlink:href="./img/sprite.svg#icon-insta"></use>
                 </svg>
               </a>
             </li>
             <li class="social__item">
               <a class="social__link" href="https://www.facebook.com/htmlacademy" aria-label="Фейсбук">
                 <svg class="social__icon social__icon--facebook">
-                  <use xlink:href="./img/sprite.svg#icon-facebook"></use>
+                  <use xlink:href="./img/sprite.svg#icon-fb"></use>
                 </svg>
               </a>
             </li>
@@ -208,11 +208,13 @@
           <a class="page-footer__link" href="https://htmlacademy.ru/intensive/adaptive" aria-label="HTML Academy">HTML Academy</a>
           <a href="https://htmlacademy.ru/intensive/adaptive" aria-label="HTML Academy">
             <svg class="page-footer__logo-small">
-              <use xlink:href="./img/sprite.svg#logo-small"></use>
+              <use xlink:href="./img/sprite.svg#icon-htmlacademy"></use>
             </svg>
           </a>
         </div>
       </div>
     </footer>
   </body>
+
+  <script src="./js/script.js"></script>
 </html>

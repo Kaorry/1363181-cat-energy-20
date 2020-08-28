@@ -280,6 +280,10 @@
     &:focus {
       border-bottom: 1px solid $special-grey;
     }
+
+    &:active {
+      border-bottom: 1px solid transparent;
+    }
   }
 
   @include desktop {
