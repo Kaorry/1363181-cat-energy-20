@@ -16,11 +16,16 @@
 }
 
 .main-nav__list {
+  display: block;
   position: relative;
   font-family: $oswald;
   font-weight: 500;
   margin: 0;
   padding: 0;
+
+  &--hide {
+    display: none;
+  }
 
   @include tablet-desktop {
     display: flex;
@@ -165,8 +170,16 @@
   height: 24px;
   border: none;
   background-color: transparent;
-  background-image: url("../img/icon-close.svg");
   background-repeat: no-repeat;
+  cursor: pointer;
+  outline: none;
+  background-image: url("../img/icon-close.svg");
+
+  &--close {
+    background-image: url("../img/icon-mobile-menu.svg");
+    top: 23px;
+    right: 21px;
+  }
 
   @include tablet-desktop {
     display: none;
