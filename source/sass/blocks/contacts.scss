@@ -104,6 +104,8 @@
 
 .contacts__map {
   height: 362px;
+  width: 100%;
+  border-style: none;
   display: block;
   background-color: $basic-grey;
   background-image: url("../img/bg-map-mobile@1x.png");

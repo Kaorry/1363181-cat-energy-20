@@ -217,12 +217,24 @@
 
   &--current {
     display: block;
+    transform: scale(1, 1);
+    transition: 250ms;
 
     @include tablet {
       display: flex;
       justify-content: center;
     }
   }
+}
+
+.example__slide .example__image {
+  animation-name: disappear;
+  animation-duration: 750ms;
+}
+
+.example__slide--current .example__image {
+  animation-name: appear;
+  animation-duration: 750ms;
 }
 
 .example__image {

@@ -1,4 +1,6 @@
 .main-nav {
+  position: relative;
+
   @include tablet-desktop {
     display: flex;
     flex-direction: row;
@@ -17,20 +19,24 @@
 
 .main-nav__list {
   display: block;
-  position: relative;
   font-family: $oswald;
   font-weight: 500;
   margin: 0;
   padding: 0;
+  background-color: $white;
+  width: 100%;
 
   &--hide {
     display: none;
   }
 
   @include tablet-desktop {
+    width: auto;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    position: relative;
+    background-color: transparent;
   }
 
   @include tablet {

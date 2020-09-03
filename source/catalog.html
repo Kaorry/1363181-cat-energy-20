@@ -26,9 +26,9 @@
                 <img class="page-header__logo" src="./img/logo-mobile.svg" width="202" height="59" alt="Логотип Cat Energy">
               </picture>
             </a>
-            <button class="main-nav__toggle main-nav__toggle--close" type="button" aria-label="Открыть меню"></button>
+            <button class="main-nav__toggle main-nav__toggle--open" type="button" aria-label="Открыть меню"></button>
           </div>
-          <ul class="main-nav__list  main-nav__list--hide">
+          <ul class="main-nav__list">
             <li class="main-nav__item">
               <a class="main-nav__link" href="index.html">
                 Главная
@@ -251,7 +251,7 @@
             <a href="#" class="catalog__button">Заказать</a>
           </li>
           <li class="catalog__item catalog__item--special">
-            <p class="catalog__item-title catalog__item-title--special">Показать еще 100500 товаров</h3>
+            <p class="catalog__item-title catalog__item-title--special">Показать еще 100500 товаров</p>
             <p class="catalog__text catalog__text--special">На самом деле вкусов гораздо больше!</p>
             <a href="#" class="catalog__button catalog__button--special">Показать все</a>
           </li>
@@ -310,14 +310,14 @@
       <section class="contacts">
         <div class="contacts__wrapper">
           <div class="contacts__offer">
-            <p class="contacts__text">Приглашаем к&nbsp;сотрудничеству дилеров!</p>
+            <h3 class="contacts__text">Приглашаем к&nbsp;сотрудничеству дилеров!</h3>
             <address class="contacts__address">
               <span>ул. Большая Конюшенная, д. 19/8</span>
               <span>Санкт-Петербург</span>
             </address>
           </div>
         </div>
-        <iframe class="contacts__map" src="https://yandex.ru/map-widget/v1/?um=constructor%3A23603bdee61c3697bfe44fb5c48b207d60658bfa5e2506304c6d3d2062edc42f&amp;source=constructor" width="100%" height="400" frameborder="0" aria-label="Карта"></iframe>
+        <iframe class="contacts__map" src="https://yandex.ru/map-widget/v1/?um=constructor%3A23603bdee61c3697bfe44fb5c48b207d60658bfa5e2506304c6d3d2062edc42f&amp;source=constructor" height="400" aria-label="Карта"></iframe>
       </section>
     </main>
 
@@ -331,21 +331,21 @@
           <ul class="social__list">
             <li class="social__item">
               <a class="social__link" href="https://vk.com/htmlacademy" aria-label="Вконтакте">
-                <svg class="social__icon social__icon--vkontakte">
+                <svg class="social__icon social__icon--vkontakte" width="23" height="16">
                   <use xlink:href="./img/sprite.svg#icon-vk"></use>
                 </svg>
               </a>
             </li>
             <li class="social__item">
               <a class="social__link" href="https://www.instagram.com/htmlacademy" aria-label="Инстаграм">
-                <svg class="social__icon social__icon--instagram">
+                <svg class="social__icon social__icon--instagram" width="16" height="16">
                   <use xlink:href="./img/sprite.svg#icon-insta"></use>
                 </svg>
               </a>
             </li>
             <li class="social__item">
               <a class="social__link" href="https://www.facebook.com/htmlacademy" aria-label="Фейсбук">
-                <svg class="social__icon social__icon--facebook">
+                <svg class="social__icon social__icon--facebook" width="22" height="22">
                   <use xlink:href="./img/sprite.svg#icon-fb"></use>
                 </svg>
               </a>
@@ -355,14 +355,14 @@
         <div class="page-footer__copyright">
           <a class="page-footer__link" href="https://htmlacademy.ru/intensive/adaptive" aria-label="HTML Academy">HTML Academy</a>
           <a href="https://htmlacademy.ru/intensive/adaptive" aria-label="HTML Academy">
-            <svg class="page-footer__logo-small">
+            <svg class="page-footer__logo-small" width="34" height="78">
               <use xlink:href="./img/sprite.svg#icon-htmlacademy"></use>
             </svg>
           </a>
         </div>
       </div>
     </footer>
-  </body>
 
-  <script src="./js/script.js" async></script>
+    <script src="./js/script.js" async></script>
+  </body>
 </html>

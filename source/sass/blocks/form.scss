@@ -15,7 +15,7 @@
   }
 
   @include desktop {
-    margin-top: 48px;
+    margin-top: 36px;
   }
 }
 
@@ -77,6 +77,12 @@
   @include tablet-desktop {
     font-size: 20px;
     line-height: 30px;
+  }
+}
+
+.form__main-list .form__input:last-child {
+  @include desktop {
+    padding-bottom: 0;
   }
 }
 
@@ -580,7 +586,7 @@
 
     @include desktop {
       margin-top: 26px;
-      grid-template-rows: 196px;
+      grid-template-rows: 1fr;
     }
   }
 }
