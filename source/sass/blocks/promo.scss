@@ -9,6 +9,10 @@
   @include wrapper;
   @include content-max-width;
 
+  @include tablet-desktop {
+    z-index: 0;
+  }
+
   &::before {
     content: "";
     position: absolute;
