@@ -32,8 +32,11 @@ var buttonMenu = document.querySelector(".main-nav__toggle");
 var menuToggle = document.querySelector(".main-nav__list");
 
 if (buttonMenu && menuToggle) {
-  buttonMenu.addEventListener("click", function () {
+  var toggleMenu = function () {
     buttonMenu.classList.toggle("main-nav__toggle--close");
     menuToggle.classList.toggle("main-nav__list--hide");
-  })
+  };
+
+  buttonMenu.addEventListener("click", toggleMenu);
+  toggleMenu();
 };

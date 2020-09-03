@@ -19,13 +19,11 @@
 
 .main-nav__list {
   display: block;
-  position: absolute;
   font-family: $oswald;
   font-weight: 500;
   margin: 0;
   padding: 0;
   background-color: $white;
-  z-index: 3;
   width: 100%;
 
   &--hide {
@@ -38,7 +36,6 @@
     flex-direction: row;
     justify-content: space-between;
     position: relative;
-    z-index: -3;
     background-color: transparent;
   }
 
